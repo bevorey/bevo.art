@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | BEVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/sections.css" />
+</head>
+<body>
+
+  <nav class="nav" id="main-nav">
+    <a href="../index.html" class="nav-logo">BEVO<span>bevo.art</span></a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="poetry.html">Poetry</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="token.html">Token</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" style="min-height:40vh;">
+    <div class="eyebrow">The Artist</div>
+    <h1 class="hero-title">About <em>BEVO</em></h1>
+  </section>
+
+  <section class="section">
+    <div class="about-block">
+      <div class="about-portrait">
+        <img src="../assets/images/portrait.jpg" alt="BEVO — artist portrait" onerror="this.style.display='none'" />
+        <div class="about-portrait-placeholder">
+          <svg width="48" height="64" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="24" cy="20" r="14" stroke="rgba(200,180,140,0.25)" stroke-width="0.5"/>
+            <path d="M4 60 Q4 40 24 40 Q44 40 44 60" stroke="rgba(200,180,140,0.2)" stroke-width="0.5"/>
+          </svg>
+          <span>Portrait</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <h2 class="about-name" id="about-name"></h2>
+        <div class="about-role" id="about-role"></div>
+        <div id="about-bio-text"></div>
+        <div class="about-tags" id="about-tags"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">BEVO · bevo.art</div>
+    <div class="bsc-badge">On Binance Smart Chain</div>
+    <div class="footer-copy">© 2026 BEVO — All rights reserved</div>
+  </footer>
+
+  <script src="../js/content.js"></script>
+  <script src="../js/nav.js"></script>
+  <script>
+    const { about } = window.BEVO;
+    document.getElementById('about-name').textContent = about.name;
+    document.getElementById('about-role').textContent = about.role;
+    const bioEl = document.getElementById('about-bio-text');
+    if (bioEl) {
+      bioEl.innerHTML = about.bio
+        .map(p => `<p class="about-bio">${p}</p>`)
+        .join('');
+    }
+    const tagsEl = document.getElementById('about-tags');
+    if (tagsEl) {
+      tagsEl.innerHTML = about.tags
+        .map(t => `<span class="tag">${t}</span>`)
+        .join('');
+    }
+  </script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

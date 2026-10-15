@@ -1,0 +1,58 @@
+/* ============================================================
+   BEVO DESIGN TOKENS
+   Edit this file to change the visual identity site-wide.
+   ============================================================ */
+
+:root {
+
+  /* --- Palette --- */
+  --color-bg:           #0a0806;
+  --color-bg-surface:   #0d0b09;
+  --color-bg-elevated:  #111009;
+
+  --color-gold:         #c8b48c;
+  --color-gold-muted:   rgba(200, 180, 140, 0.4);
+  --color-gold-faint:   rgba(200, 180, 140, 0.12);
+
+  --color-text:         #e8e0d0;
+  --color-text-muted:   rgba(232, 224, 208, 0.55);
+  --color-text-faint:   rgba(232, 224, 208, 0.25);
+
+  --color-border:       rgba(200, 180, 140, 0.12);
+  --color-border-mid:   rgba(200, 180, 140, 0.2);
+  --color-border-glow:  rgba(200, 180, 140, 0.35);
+
+  /* --- Typography --- */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-mono:    'Space Mono', 'Courier New', monospace;
+
+  /* --- Type scale --- */
+  --text-xs:   0.55rem;
+  --text-sm:   0.75rem;
+  --text-base: 1rem;
+  --text-md:   1.1rem;
+  --text-lg:   1.5rem;
+  --text-xl:   2rem;
+  --text-2xl:  2.5rem;
+  --text-hero: clamp(3rem, 7vw, 5.5rem);
+
+  /* --- Spacing --- */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2.5rem;
+  --space-xl:  4rem;
+
+  /* --- Layout --- */
+  --max-width: 1200px;
+  --section-pad: 4rem 2.5rem;
+
+  /* --- Transitions --- */
+  --transition: 0.25s ease;
+
+  /* --- Letter spacing --- */
+  --tracking-wide:  0.15em;
+  --tracking-wider: 0.25em;
+  --tracking-logo:  0.35em;
+
+}

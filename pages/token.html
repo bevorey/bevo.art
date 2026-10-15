@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BEVO Token | BEVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/sections.css" />
+</head>
+<body>
+
+  <nav class="nav" id="main-nav">
+    <a href="../index.html" class="nav-logo">BEVO<span>bevo.art</span></a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="poetry.html">Poetry</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="token.html" class="active">Token</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" style="min-height:40vh;">
+    <div class="eyebrow">Binance Smart Chain · NFT</div>
+    <h1 class="hero-title">The <em>BEVO</em> Token</h1>
+    <p class="hero-sub">Collect the art. Own a piece of the creative universe.</p>
+  </section>
+
+  <section class="section">
+    <div class="token-block">
+      <div class="token-copy">
+        <div class="token-label">BEVO NFT Art Token — BSC</div>
+        <h2 class="token-headline">Own a piece<br>of the work</h2>
+        <p class="token-desc">
+          BEVO is the token at the center of this creative universe. Each NFT is a unique
+          piece of AI-generated art born from original poetry. Collect, hold, and participate
+          in the ecosystem built on Binance Smart Chain.
+        </p>
+        <div class="hero-actions">
+          <a href="#" id="pancakeswap-link" class="btn btn-primary" target="_blank" rel="noopener">Buy on PancakeSwap</a>
+          <a href="#" id="bscscan-link" class="btn btn-ghost" target="_blank" rel="noopener">View on BSCScan</a>
+        </div>
+      </div>
+      <!-- Live stats populated by js/token.js -->
+      <div class="token-stats" id="token-stats-grid"></div>
+    </div>
+
+    <!-- How to buy -->
+    <div style="margin-top:3rem;">
+      <div class="section-header">
+        <h2 class="section-title">How to buy</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;">
+        <div class="token-stat" style="padding:1.5rem;">
+          <div class="token-stat-val" style="margin-bottom:0.5rem;">01</div>
+          <div style="font-family:var(--font-display);font-style:italic;color:var(--color-text);margin-bottom:0.5rem;">Get a wallet</div>
+          <div class="token-stat-label" style="line-height:1.6;">Install MetaMask or Trust Wallet and add the Binance Smart Chain network.</div>
+        </div>
+        <div class="token-stat" style="padding:1.5rem;">
+          <div class="token-stat-val" style="margin-bottom:0.5rem;">02</div>
+          <div style="font-family:var(--font-display);font-style:italic;color:var(--color-text);margin-bottom:0.5rem;">Get BNB</div>
+          <div class="token-stat-label" style="line-height:1.6;">Buy BNB on any major exchange and transfer it to your wallet.</div>
+        </div>
+        <div class="token-stat" style="padding:1.5rem;">
+          <div class="token-stat-val" style="margin-bottom:0.5rem;">03</div>
+          <div style="font-family:var(--font-display);font-style:italic;color:var(--color-text);margin-bottom:0.5rem;">Swap for BEVO</div>
+          <div class="token-stat-label" style="line-height:1.6;">Go to PancakeSwap, paste the BEVO contract address, and swap BNB for BEVO.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contract address display -->
+    <div id="contract-display" style="display:none;margin-top:2rem;padding:1.5rem;border:0.5px solid var(--color-border);background:var(--color-bg-surface);">
+      <div class="token-stat-label" style="margin-bottom:0.5rem;">Contract Address (BSC)</div>
+      <div id="contract-address-text" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--color-gold);word-break:break-all;"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">BEVO · bevo.art</div>
+    <div class="bsc-badge">On Binance Smart Chain</div>
+    <div class="footer-copy">© 2026 BEVO — All rights reserved</div>
+  </footer>
+
+  <script src="../js/content.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/token.js"></script>
+  <script>
+    // Token page extras
+    const { token } = window.BEVO;
+    if (token.contractAddress) {
+      const el = document.getElementById('contract-display');
+      const txt = document.getElementById('contract-address-text');
+      if (el) el.style.display = 'block';
+      if (txt) txt.textContent = token.contractAddress;
+    }
+    if (token.pancakeswapUrl) {
+      const ps = document.getElementById('pancakeswap-link');
+      if (ps) ps.href = token.pancakeswapUrl;
+    }
+  </script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

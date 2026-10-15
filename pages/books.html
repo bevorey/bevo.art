@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books &amp; Stories | BEVO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/sections.css" />
+</head>
+<body>
+
+  <nav class="nav" id="main-nav">
+    <a href="../index.html" class="nav-logo">BEVO<span>bevo.art</span></a>
+    <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu">&#9776;</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="poetry.html">Poetry</a></li>
+      <li><a href="music.html">Music</a></li>
+      <li><a href="books.html" class="active">Books</a></li>
+      <li><a href="token.html">Token</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" style="min-height:40vh;">
+    <div class="eyebrow">Books · Short Stories · Fiction</div>
+    <h1 class="hero-title">Books &amp; <em>Stories</em></h1>
+    <p class="hero-sub">Long-form worlds built from the same poetic imagination.</p>
+  </section>
+
+  <section class="section">
+    <!-- Populated by js/books.js -->
+    <div class="books-grid" id="books-full-grid"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">BEVO · bevo.art</div>
+    <div class="bsc-badge">On Binance Smart Chain</div>
+    <div class="footer-copy">© 2026 BEVO — All rights reserved</div>
+  </footer>
+
+  <script src="../js/content.js"></script>
+  <script src="../js/nav.js"></script>
+  <script src="../js/books.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
