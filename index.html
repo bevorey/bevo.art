@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/hero.css">
 </head>
 
 <body>
@@ -59,8 +60,9 @@
   <main>
 
     <!-- ─── Hero ──────────────────────────────────────────────────────────── -->
-    <section class="hero">
-      <div class="hero-bg"></div>
+    <section class="hero" id="hero">
+      <div class="hero-carousel" id="hero-carousel" aria-hidden="true"></div>
+      <div class="hero-shade"></div>
       <div class="hero-noise"></div>
 
       <div class="container hero-body">
@@ -77,6 +79,8 @@
           <a href="#token"   class="btn btn-ghost">BEVO Token</a>
         </div>
       </div>
+
+      <div class="container hero-controls" id="hero-controls"></div>
 
       <div class="hero-scroll" aria-hidden="true">
         <div class="hero-scroll-line"></div>
@@ -221,6 +225,7 @@
   <!-- ─── Scripts ───────────────────────────────────────────────────────── -->
   <script src="js/content.js"></script>
   <script src="js/nav.js"></script>
+  <script src="js/carousel.js"></script>
   <script src="js/gallery.js"></script>
   <script src="js/poetry.js"></script>
   <script src="js/token.js"></script>

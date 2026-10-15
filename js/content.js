@@ -25,6 +25,22 @@ window.BEVO = {
     },
   },
 
+  hero: {
+    interval: 7000,   // how long each image stays up, in ms
+    slides: [
+      // type: 'image' or 'video'
+      // position: which part of the image stays in frame (CSS object-position)
+      // dim: 0 = black, 1 = full brightness (default 0.5)
+      { type: 'image', src: 'images/freeart.png',        title: 'Silence Is Not Free', position: 'center 40%' },
+      { type: 'image', src: 'images/art-watercolor.jpg', title: 'Fractured',           position: 'center 35%', dim: 0.45 },
+      { type: 'image', src: 'images/tribal-pattern.jpg', title: 'Tribal Memory',       dim: 0.3 },
+
+      // Video: drop an .mp4 into /videos and uncomment.
+      // It plays once, then moves on. Add duration: 12000 to cut a long clip short.
+      // { type: 'video', src: 'videos/hero-loop.mp4', poster: 'images/freeart.png', title: 'Title' },
+    ],
+  },
+
   gallery: [
     {
       id:          'g1',
