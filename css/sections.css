@@ -1,401 +1,89 @@
-/* ============================================================
-   SECTIONS
-   Page-specific section styles.
-   ============================================================ */
+/* ─── Page sections ───────────────────────────────────────────────────────
+   Fills Open Stage, Gallery, Words, the message from Bevo and the footer
+   from content.js. Edit content.js, not this file, to change what shows.
+──────────────────────────────────────────────────────────────────────── */
 
-/* ---- GALLERY ---- */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--color-border);
-}
+(function () {
+  if (!window.BEVO) return;
+  const B = BEVO;
+  const $ = id => document.getElementById(id);
 
-.gallery-item {
-  aspect-ratio: 1;
-  background: var(--color-bg-elevated);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.04);
-}
-
-.gallery-caption {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 1rem;
-  background: linear-gradient(transparent, rgba(10, 8, 6, 0.9));
-  font-size: 0.82rem;
-  font-style: italic;
-  color: rgba(232, 224, 208, 0.75);
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.gallery-item:hover .gallery-caption { transform: translateY(0); }
-
-.gallery-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-@media (max-width: 768px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 480px) {
-  .gallery-grid { grid-template-columns: 1fr; }
-}
-
-/* ---- POETRY ---- */
-.poetry-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.poem-card {
-  border: 0.5px solid var(--color-border);
-  padding: 2rem;
-  background: var(--color-bg-surface);
-  position: relative;
-}
-
-.poem-card::before {
-  content: '"';
-  position: absolute;
-  top: 0.4rem;
-  left: 1.5rem;
-  font-size: 4rem;
-  color: rgba(200, 180, 140, 0.08);
-  font-family: Georgia, serif;
-  line-height: 1;
-  pointer-events: none;
-}
-
-.poem-text {
-  font-size: var(--text-base);
-  font-style: italic;
-  font-weight: 300;
-  line-height: 1.95;
-  color: var(--color-text-muted);
-  margin-bottom: 1.2rem;
-}
-
-.poem-title {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.2em;
-  color: var(--color-gold);
-  text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-  .poetry-grid { grid-template-columns: 1fr; }
-}
-
-/* ---- MUSIC ---- */
-.music-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-}
-
-.music-card {
-  border: 0.5px solid var(--color-border);
-  padding: 1.5rem;
-  background: var(--color-bg-surface);
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  transition: border-color var(--transition);
-}
-
-.music-card:hover { border-color: var(--color-border-mid); }
-
-.music-icon {
-  width: 52px;
-  height: 52px;
-  background: rgba(200, 180, 140, 0.06);
-  border: 0.5px solid var(--color-border-mid);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.music-platform {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.2em;
-  color: var(--color-gold-muted);
-  text-transform: uppercase;
-  margin-bottom: 0.3rem;
-}
-
-.music-title {
-  font-size: var(--text-base);
-  font-style: italic;
-  color: var(--color-text);
-  font-weight: 300;
-}
-
-.music-sub {
-  font-size: 0.8rem;
-  color: var(--color-text-faint);
-  margin-top: 0.2rem;
-}
-
-.music-embed-wrapper {
-  margin-top: 1.5rem;
-  border: 0.5px solid var(--color-border);
-  background: var(--color-bg-surface);
-  padding: 1.5rem;
-}
-
-.music-embed-wrapper iframe {
-  width: 100%;
-  border: none;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .music-cards { grid-template-columns: 1fr; }
-}
-
-/* ---- BOOKS ---- */
-.books-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.book-card {
-  background: var(--color-bg-surface);
-  border: 0.5px solid var(--color-border);
-  overflow: hidden;
-  transition: border-color var(--transition);
-}
-
-.book-card:hover { border-color: var(--color-border-mid); }
-
-.book-cover {
-  height: 180px;
-  background: var(--color-bg-elevated);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 0.5px solid var(--color-border);
-  overflow: hidden;
-}
-
-.book-cover img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.book-info { padding: 1.2rem; }
-
-.book-type {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.2em;
-  color: var(--color-gold-muted);
-  text-transform: uppercase;
-  margin-bottom: 0.4rem;
-}
-
-.book-title {
-  font-size: var(--text-base);
-  font-style: italic;
-  color: var(--color-text);
-  font-weight: 300;
-  line-height: 1.4;
-}
-
-.book-desc {
-  font-size: 0.85rem;
-  color: var(--color-text-faint);
-  line-height: 1.7;
-  margin-top: 0.6rem;
-  font-weight: 300;
-}
-
-@media (max-width: 900px) {
-  .books-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 480px) {
-  .books-grid { grid-template-columns: 1fr; }
-}
-
-/* ---- TOKEN ---- */
-.token-block {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 3rem;
-  align-items: center;
-  background: var(--color-bg-surface);
-  border: 0.5px solid var(--color-border-mid);
-  padding: 3rem;
-}
-
-.token-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wider);
-  color: var(--color-gold);
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
-.token-headline {
-  font-size: var(--text-xl);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--color-text);
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-.token-desc {
-  font-size: 0.95rem;
-  color: var(--color-text-muted);
-  line-height: 1.85;
-  font-weight: 300;
-  margin-bottom: 1.8rem;
-}
-
-.token-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.token-stat {
-  border: 0.5px solid var(--color-border);
-  padding: 1rem;
-  background: var(--color-bg);
-}
-
-.token-stat-val {
-  font-family: var(--font-mono);
-  font-size: var(--text-base);
-  color: var(--color-gold);
-  margin-bottom: 0.25rem;
-}
-
-.token-stat-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wide);
-  color: var(--color-text-faint);
-  text-transform: uppercase;
-}
-
-@media (max-width: 768px) {
-  .token-block {
-    grid-template-columns: 1fr;
-    padding: 2rem;
-    gap: 2rem;
-  }
-}
-
-/* ---- ABOUT ---- */
-.about-block {
-  display: grid;
-  grid-template-columns: 1fr 1.6fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.about-portrait {
-  aspect-ratio: 3 / 4;
-  background: var(--color-bg-elevated);
-  border: 0.5px solid var(--color-border);
-  overflow: hidden;
-  position: relative;
-}
-
-.about-portrait img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.about-portrait-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-}
-
-.about-portrait-placeholder span {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: 0.2em;
-  color: var(--color-text-faint);
-  text-transform: uppercase;
-}
-
-.about-name {
-  font-size: var(--text-2xl);
-  font-weight: 300;
-  font-style: italic;
-  color: var(--color-text);
-  margin-bottom: 0.3rem;
-}
-
-.about-role {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wider);
-  color: var(--color-gold);
-  text-transform: uppercase;
-  margin-bottom: 1.8rem;
-}
-
-.about-bio {
-  font-size: var(--text-base);
-  font-weight: 300;
-  line-height: 1.9;
-  color: var(--color-text-muted);
-  margin-bottom: 1.2rem;
-}
-
-.about-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1.5rem;
-}
-
-@media (max-width: 768px) {
-  .about-block {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  // ── Open Stage ────────────────────────────────────────────────────────
+  if (B.openStage) {
+    if ($('stage-intro-text')) {
+      $('stage-intro-text').innerHTML = B.openStage.intro.map(p => `<p>${p}</p>`).join('');
+    }
+    if ($('stage-steps')) {
+      $('stage-steps').innerHTML = B.openStage.steps.map(s => `
+        <li class="stage-step">
+          <div>
+            <h3>${s.title}</h3>
+            <p>${s.text}</p>
+          </div>
+        </li>`).join('');
+    }
+    if ($('stage-status')) $('stage-status').textContent = B.openStage.status;
   }
 
-  .about-portrait {
-    aspect-ratio: 1;
-    max-width: 280px;
+  // ── Gallery ───────────────────────────────────────────────────────────
+  if ($('gallery-grid') && B.gallery) {
+    $('gallery-grid').innerHTML = B.gallery.map(g => `
+      <figure class="gallery-item">
+        ${g.src
+          ? `<div class="gallery-frame"><img src="${g.src}" alt="${g.title}" loading="lazy"></div>`
+          : `<div class="gallery-frame is-empty">${g.title}</div>`}
+        ${g.src ? `
+        <figcaption class="gallery-caption">
+          <p class="gallery-title">${g.title}</p>
+          ${g.poem ? `<p class="gallery-poem">${g.poem}</p>` : ''}
+        </figcaption>` : ''}
+      </figure>`).join('');
   }
-}
+
+  // ── Words ─────────────────────────────────────────────────────────────
+  if ($('poetry-list') && B.poetry) {
+    $('poetry-list').innerHTML = B.poetry.map(p => `
+      <article class="poem-item">
+        <div>
+          <h4 class="poem-title">${p.title}</h4>
+          <p class="poem-excerpt">${p.excerpt}</p>
+        </div>
+        <span class="poem-meta">${p.year}</span>
+      </article>`).join('');
+  }
+
+  if ($('books-list') && B.books) {
+    $('books-list').innerHTML = B.books.map(b => `
+      <article class="book-item">
+        <p class="book-meta">${[b.genre, b.year].filter(Boolean).join(', ')}</p>
+        <h4 class="book-title">${b.title}</h4>
+        ${b.desc ? `<p class="book-desc">${b.desc}</p>` : ''}
+        ${b.link ? `<a class="book-link" href="${b.link}" target="_blank" rel="noopener">Read</a>` : ''}
+      </article>`).join('');
+  }
+
+  // ── A message from Bevo ───────────────────────────────────────────────
+  if ($('message-body') && B.message) {
+    const m = B.message;
+    $('message-body').innerHTML = `
+      <p class="section-label">A message from Bevo</p>
+      <blockquote class="message-quote">“${m.quote}”</blockquote>
+      ${m.paragraphs.map(p => `<p class="message-para">${p}</p>`).join('')}
+      <p class="message-signoff">${m.signoff}</p>
+      <p class="message-close">What is your art?<br><span>This is your art. BEVO.</span></p>`;
+  }
+
+  // ── Footer ────────────────────────────────────────────────────────────
+  if ($('footer-links')) {
+    const s = B.social || {};
+    const links = [
+      ['Spotify',     s.spotify],
+      ['Apple Music', s.apple],
+      ['Telegram',    s.telegram],
+      ['Whitepaper',  B.site && B.site.whitepaper],
+    ].filter(([, url]) => url);
+    $('footer-links').innerHTML = links.map(([label, url]) =>
+      `<a href="${url}" class="footer-link" target="_blank" rel="noopener">${label}</a>`).join('');
+  }
+  if ($('footer-year')) $('footer-year').textContent = `© ${new Date().getFullYear()} bevo.art`;
+})();

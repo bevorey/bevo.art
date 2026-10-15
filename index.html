@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BEVO — Art. Music. Poetry. Token.</title>
-  <meta name="description" content="Original art, music, poetry and digital NFTs by Bevo. BEVO token on Binance Smart Chain.">
-  <meta property="og:title" content="BEVO — Art. Music. Poetry. Token.">
-  <meta property="og:description" content="Original art, music, poetry and digital NFTs by Bevo.">
-  <meta property="og:image" content="images/bevo-logo.png">
+  <title>BEVO — What is your art?</title>
+  <meta name="description" content="BEVO is a launchpad for music, art and writing. It begins with the work of Bevo Rey, opens its stage to everyone, and lets $BEVO holders decide who is featured next.">
+  <meta property="og:title" content="BEVO — What is your art?">
+  <meta property="og:description" content="A launchpad for music, art and writing, anchored to $BEVO on Binance Smart Chain.">
+  <meta property="og:image" content="images/bevo-logo-silver.png">
   <meta name="theme-color" content="#0a0806">
 
   <link rel="icon" type="image/png" href="images/bevo-logo-silver.png">
@@ -21,7 +21,6 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/hero.css">
 </head>
 
 <body>
@@ -31,22 +30,17 @@
     <div class="container nav-inner">
 
       <a href="/" class="nav-logo" aria-label="BEVO home">
-        <img
-          class="nav-logo-wordmark"
-          src="images/bevo-wordmark.png"
-          alt="BevO"
-          height="38"
-        >
+        <img class="nav-logo-wordmark" src="images/bevo-wordmark.png" alt="BevO" height="38">
       </a>
 
       <nav id="nav-links" class="nav-links" aria-label="Main navigation">
-        <a href="#gallery"  class="nav-link">Gallery</a>
-        <a href="#poetry"   class="nav-link">Poetry</a>
-        <a href="#music"    class="nav-link">Music</a>
-        <a href="#books"    class="nav-link">Books</a>
-        <a href="#token"    class="nav-link">Token</a>
-        <a href="#about"    class="nav-link">About</a>
-        <a href="#token"    class="nav-cta">Buy BEVO</a>
+        <a href="#music"      class="nav-link">Music</a>
+        <a href="#open-stage" class="nav-link">Open Stage</a>
+        <a href="#gallery"    class="nav-link">Gallery</a>
+        <a href="#words"      class="nav-link">Words</a>
+        <a href="#token"      class="nav-link">Token</a>
+        <a href="#about"      class="nav-link">About</a>
+        <a href="docs/BEVO_Whitepaper_v2.3.pdf" class="nav-cta" target="_blank" rel="noopener">Whitepaper</a>
       </nav>
 
       <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
@@ -65,17 +59,17 @@
       <div class="hero-noise"></div>
 
       <div class="container hero-body">
-        <p class="hero-eyebrow">bevo.art — digital art · music · poetry · nft</p>
+        <p class="hero-eyebrow">bevo.art — music · art · words · $BEVO</p>
         <h1 class="hero-headline">
-          Art is the only<br>
-          <em>honest</em> currency.
+          What is<br>
+          your <em>art?</em>
         </h1>
         <p class="hero-sub">
-          Original works across canvas, verse, and sound — tokenised on Binance Smart Chain.
+          BEVO is a launchpad for music, art and writing. It begins with the work of Bevo Rey, opens its stage to everyone, and lets $BEVO holders decide who is featured next.
         </p>
         <div class="hero-actions">
-          <a href="#gallery" class="btn btn-gold">Explore the Work</a>
-          <a href="#token"   class="btn btn-ghost">BEVO Token</a>
+          <a href="#music"      class="btn btn-gold">Listen</a>
+          <a href="#open-stage" class="btn btn-ghost">Become a BEVO Artist</a>
         </div>
       </div>
 
@@ -87,46 +81,12 @@
       </div>
     </section>
 
-    <!-- ─── Gallery ───────────────────────────────────────────────────────── -->
-    <section id="gallery" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-label">Visual Art</p>
-          <h2 class="section-title">The Gallery</h2>
-          <div class="section-rule"></div>
-        </div>
-        <div id="gallery-grid" class="gallery-grid"></div>
-        <div style="margin-top:var(--space-8);text-align:center;">
-          <a href="pages/gallery.html" class="btn btn-ghost">View Full Gallery</a>
-        </div>
-      </div>
-    </section>
-
-    <hr class="gold-rule">
-
-    <!-- ─── Poetry ────────────────────────────────────────────────────────── -->
-    <section id="poetry" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-label">Words</p>
-          <h2 class="section-title">Poetry</h2>
-          <div class="section-rule"></div>
-        </div>
-        <div id="poetry-list" class="poetry-list"></div>
-        <div style="margin-top:var(--space-8);">
-          <a href="pages/poetry.html" class="btn btn-ghost">All Poems</a>
-        </div>
-      </div>
-    </section>
-
-    <hr class="gold-rule">
-
     <!-- ─── Music ─────────────────────────────────────────────────────────── -->
     <section id="music" class="section">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Sound</p>
-          <h2 class="section-title">Music</h2>
+          <p class="section-label">Now playing</p>
+          <h2 class="section-title">Music by Bevo Rey</h2>
           <div class="section-rule"></div>
         </div>
         <div class="music-embeds">
@@ -135,7 +95,6 @@
               src="https://open.spotify.com/embed/artist/4mF9PGVr6woqdnAS30mKvW?utm_source=generator&theme=0"
               width="100%"
               height="450"
-              frameborder="0"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
               title="Bevo Rey on Spotify"
@@ -146,7 +105,6 @@
               src="https://embed.music.apple.com/us/album/35-single/6782352168?theme=dark"
               width="100%"
               height="450"
-              frameborder="0"
               allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
               sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
               loading="lazy"
@@ -157,17 +115,96 @@
       </div>
     </section>
 
-    <hr class="gold-rule">
+    <!-- ─── Open Stage ────────────────────────────────────────────────────── -->
+    <section id="open-stage" class="section stage">
+      <div class="container stage-layout">
 
-    <!-- ─── Books ─────────────────────────────────────────────────────────── -->
-    <section id="books" class="section">
+        <div class="stage-intro">
+          <p class="section-label">The Open Stage</p>
+          <h2 class="stage-title">Become a BEVO&nbsp;Artist</h2>
+          <div id="stage-intro-text"></div>
+          <ol id="stage-steps" class="stage-steps"></ol>
+        </div>
+
+        <!-- Netlify collects these submissions: Site > Forms in your Netlify dashboard -->
+        <form
+          class="stage-form"
+          id="artist-form"
+          name="bevo-artists"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="company"
+        >
+          <input type="hidden" name="form-name" value="bevo-artists">
+          <p class="hidden-field"><label>Leave this empty <input name="company"></label></p>
+
+          <h3>Join the list</h3>
+          <p class="stage-status" id="stage-status"></p>
+
+          <div class="field">
+            <label for="f-name">Name or artist name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-type">What do you make?</label>
+            <select id="f-type" name="type" required>
+              <option value="" disabled selected>Choose one</option>
+              <option>Music</option>
+              <option>Digital art</option>
+              <option>Writing</option>
+              <option>More than one</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-link">Link to your work <span class="field-optional">(optional)</span></label>
+            <input id="f-link" name="link" type="url" placeholder="https://">
+          </div>
+
+          <button type="submit" class="btn btn-gold">Join the list</button>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- ─── Gallery ───────────────────────────────────────────────────────── -->
+    <section id="gallery" class="section">
       <div class="container">
         <div class="section-header">
-          <p class="section-label">Writing</p>
-          <h2 class="section-title">Books &amp; Stories</h2>
+          <p class="section-label">Visual art</p>
+          <h2 class="section-title">Gallery</h2>
           <div class="section-rule"></div>
+          <p class="section-intro">Every image starts as words. Each piece is shown with the line it grew from.</p>
         </div>
-        <div id="books-grid" class="books-grid"></div>
+        <div id="gallery-grid" class="gallery-grid"></div>
+      </div>
+    </section>
+
+    <hr class="gold-rule">
+
+    <!-- ─── Words ─────────────────────────────────────────────────────────── -->
+    <section id="words" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Poetry &amp; prose</p>
+          <h2 class="section-title">Words</h2>
+          <div class="section-rule"></div>
+          <p class="section-intro">The writing is the root system. The images and songs on BEVO grow from it.</p>
+        </div>
+        <div class="words-layout">
+          <div>
+            <h3 class="words-col-title">Poems</h3>
+            <div id="poetry-list"></div>
+          </div>
+          <div>
+            <h3 class="words-col-title">Books &amp; stories</h3>
+            <div id="books-list"></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -175,33 +212,18 @@
 
     <!-- ─── Token ─────────────────────────────────────────────────────────── -->
     <section id="token" class="section">
-      <div class="container">
-        <div class="section-header">
-          <p class="section-label">Blockchain</p>
-          <h2 class="section-title">BEVO Token</h2>
-          <div class="section-rule"></div>
-        </div>
-        <div id="token-block"></div>
-      </div>
+      <div class="container" id="token-block"></div>
     </section>
 
     <hr class="gold-rule">
 
-    <!-- ─── About ─────────────────────────────────────────────────────────── -->
+    <!-- ─── A message from Bevo ───────────────────────────────────────────── -->
     <section id="about" class="section">
-      <div class="container">
-        <div class="about-layout">
-          <div class="about-img-wrap">
-            <img src="images/art-figure.png" alt="Bevo" loading="lazy">
-          </div>
-          <div class="about-body">
-            <p class="section-label">The Artist</p>
-            <h2 class="section-title" style="margin-bottom:var(--space-6);">About Bevo</h2>
-            <div class="section-rule" style="margin-bottom:var(--space-8);"></div>
-            <div id="about-text"></div>
-            <a href="pages/about.html" class="btn btn-gold" style="margin-top:var(--space-8);">Full Bio</a>
-          </div>
+      <div class="container message-layout">
+        <div class="message-img">
+          <img src="images/art-figure.png" alt="Ascension, a statue with arms open to the sky" loading="lazy">
         </div>
+        <div class="message-body" id="message-body"></div>
       </div>
     </section>
 
@@ -212,16 +234,10 @@
     <div class="container footer-inner">
       <div class="footer-logo">
         <img src="images/bevo-logo-silver.png" alt="BEVO" width="32" height="32">
-        <img src="images/bevo-wordmark.png" alt="BevO" height="24" class="footer-wordmark">
+        <img src="images/bevo-wordmark.png" alt="BevO" height="22" class="footer-wordmark">
       </div>
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="#gallery"  class="footer-link">Gallery</a>
-        <a href="#poetry"   class="footer-link">Poetry</a>
-        <a href="#music"    class="footer-link">Music</a>
-        <a href="#token"    class="footer-link">Token</a>
-        <a href="https://t.me/bevotoken" target="_blank" rel="noopener" class="footer-link">Telegram</a>
-      </nav>
-      <p class="footer-copy" id="footer-year">© 2026 bevo.art</p>
+      <nav class="footer-links" id="footer-links" aria-label="Footer navigation"></nav>
+      <p class="footer-copy" id="footer-year">© bevo.art</p>
     </div>
   </footer>
 
@@ -229,37 +245,9 @@
   <script src="js/content.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/carousel.js"></script>
-  <script src="js/gallery.js"></script>
-  <script src="js/poetry.js"></script>
+  <script src="js/sections.js"></script>
   <script src="js/token.js"></script>
-  <script>
-    // Books
-    (function() {
-      const g = document.getElementById('books-grid');
-      if (!g || !window.BEVO) return;
-      g.innerHTML = BEVO.books.map(b => `
-        <article class="card book-card">
-          <div class="book-cover">${b.cover ? `<img src="${b.cover}" alt="${b.title}">` : '✦'}</div>
-          <div>
-            ${b.genre ? `<p class="book-genre">${b.genre} · ${b.year}</p>` : ''}
-            <h3 class="book-title">${b.title}</h3>
-            ${b.desc ? `<p class="book-desc">${b.desc}</p>` : ''}
-            ${b.link && b.link !== '#' ? `<a href="${b.link}" class="btn btn-ghost" style="margin-top:var(--space-4);" target="_blank">Read</a>` : ''}
-          </div>
-        </article>
-      `).join('');
-    })();
-
-    // About text
-    (function() {
-      const el = document.getElementById('about-text');
-      if (!el || !window.BEVO) return;
-      el.innerHTML = BEVO.about.bio.map(p => `<p>${p}</p>`).join('');
-    })();
-
-    // Footer year
-    document.getElementById('footer-year').textContent = `© ${new Date().getFullYear()} bevo.art`;
-  </script>
+  <script src="js/form.js"></script>
 
 </body>
 </html>

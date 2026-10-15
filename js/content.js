@@ -5,26 +5,18 @@ window.BEVO = {
   site: {
     name:        'BEVO',
     domain:      'bevo.art',
-    tagline:     'Art. Music. Poetry. Token.',
-    description: 'Original art, music, poetry and digital NFTs by Bevo.',
-    year:        2026,
+    description: 'BEVO is a launchpad for music, art and writing. It begins with the work of Bevo Rey and opens its stage to everyone.',
+    whitepaper:  'docs/BEVO_Whitepaper_v2.3.pdf',
   },
 
-  about: {
-    headline: 'Art is the only honest currency.',
-    bio: [
-      'I am Bevo — poet, musician, visual artist, and the architect of the BEVO token. My work lives at the intersection of language and image: poems that become paintings, songs that carry stories, stories that bleed into verse.',
-      'Since 2021, the BEVO token has been the on-chain vessel for that creative output — born from a 500 BNB presale sellout on DxSale and grown into a community of thousands. v2 is the continuation, rebuilt around my own work.',
-      'Based in the Caribbean. Rooted in the spiritual. Reaching everywhere.',
-    ],
-    social: {
-      spotify:    'https://open.spotify.com/artist/4mF9PGVr6woqdnAS30mKvW',
-      apple:      'https://music.apple.com/us/artist/bevo-rey/6781925906',
-      twitter:    'https://twitter.com/bevoart',
-      telegram:   'https://t.me/bevotoken',
-    },
+  social: {
+    spotify:  'https://open.spotify.com/artist/4mF9PGVr6woqdnAS30mKvW',
+    apple:    'https://music.apple.com/us/artist/bevo-rey/6781925906',
+    telegram: 'https://t.me/bevotoken',   // confirm this is the right group
+    twitter:  'https://twitter.com/bevoart', // confirm this is the right handle
   },
 
+  // ── Hero slideshow ────────────────────────────────────────────────────────
   hero: {
     interval: 7000,   // how long each image stays up, in ms
     slides: [
@@ -41,166 +33,125 @@ window.BEVO = {
     ],
   },
 
-  gallery: [
-    {
-      id:          'g1',
-      title:       'Ascension',
-      poem:        'Rise above the noise / arms wide as the horizon / stone holds the light.',
-      src:         'images/art-figure.png',
-      placeholder: '#1a1510',
-    },
-    {
-      id:          'g2',
-      title:       'Fractured',
-      poem:        'The face behind the frame / knows which mirror lies. / Blue hair. Blue truth.',
-      src:         'images/art-watercolor.jpg',
-      placeholder: '#12181e',
-    },
-    {
-      id:          'g3',
-      title:       'Silence Is Not Free',
-      poem:        'They covered the mouth / and called it safety. / The art remained.',
-      src:         'images/freeart.png',
-      placeholder: '#0e0e0e',
-    },
-    {
-      id:          'g4',
-      title:       'Classical Frequency',
-      poem:        'Even stone has a sense of humor. / Even marble chews gum.',
-      src:         'images/art-david.jpg',
-      placeholder: '#1a1518',
-    },
-    {
-      id:          'g5',
-      title:       'Tribal Memory',
-      poem:        'These lines were drawn before language. / They remember what words forgot.',
-      src:         'images/tribal-pattern.jpg',
-      placeholder: '#0d0d0d',
-    },
-    {
-      id:          'g6',
-      title:       'Coming Soon',
-      poem:        '',
-      src:         '',
-      placeholder: '#100e0b',
-    },
-  ],
-
-  poetry: [
-    {
-      id:      'p1',
-      title:   'Stone and Light',
-      year:    '2024',
-      lines:   [
-        'Rise above the noise',
-        'arms wide as the horizon —',
-        'stone holds the light.',
-      ],
-      excerpt: 'Rise above the noise / arms wide as the horizon',
-    },
-    {
-      id:      'p2',
-      title:   'Blue Truth',
-      year:    '2024',
-      lines:   [
-        'The face behind the frame',
-        'knows which mirror lies.',
-        'Blue hair. Blue truth. Blue everything.',
-      ],
-      excerpt: 'The face behind the frame / knows which mirror lies',
-    },
-    {
-      id:      'p3',
-      title:   'The Token and the Song',
-      year:    '2023',
-      lines:   [
-        'They said art had no price.',
-        'We gave it a contract address.',
-        'Now it lives on-chain, permanent, undeniable.',
-      ],
-      excerpt: 'They said art had no price. / We gave it a contract address.',
-    },
-    {
-      id:      'p4',
-      title:   'Caribbean Frequency',
-      year:    '2023',
-      lines:   [
-        'The island does not hurry.',
-        'It arrives exactly when it means to —',
-        'salt and certainty.',
-      ],
-      excerpt: 'The island does not hurry. / It arrives exactly when it means to.',
-    },
-  ],
-
+  // ── Music ─────────────────────────────────────────────────────────────────
+  // The players in index.html use these IDs.
   music: {
     artistName: 'Bevo Rey',
-    spotify: {
-      artistId: '4mF9PGVr6woqdnAS30mKvW',
-      url:      'https://open.spotify.com/artist/4mF9PGVr6woqdnAS30mKvW',
-    },
-    apple: {
-      url: 'https://music.apple.com/us/artist/bevo-rey/6781925906',
-    },
-    latest: {
-      title:  '35',
-      type:   'Single',
-      year:   '2026',
-      tracks: ['Invisible', 'Guard Your Heart', 'Turquoise Dream'],
-    },
+    spotifyArtistId: '4mF9PGVr6woqdnAS30mKvW',
+    appleAlbumUrl:   'https://embed.music.apple.com/us/album/35-single/6782352168?theme=dark',
   },
 
-  books: [
+  // ── Open Stage ────────────────────────────────────────────────────────────
+  openStage: {
+    intro: [
+      'BEVO was never meant to stop with me. In 2021, artists from all over sent us their work, and that door opens again.',
+      'Anyone can submit songs and digital art they’ve created. Featured works are put on display and promoted on BEVO, and can eventually be added to a BEVO album. BEVO holders help decide who is featured next.',
+    ],
+    steps: [
+      { title: 'Submit your work',       text: 'Send a song or a piece of digital art you created.' },
+      { title: 'Get featured',           text: 'Selected work is put on display and promoted on BEVO.' },
+      { title: 'Holders vote',           text: '$BEVO holders help decide who is featured next.' },
+      { title: 'Become a BEVO Artist',   text: 'Featured artists join the roster, and songs can land on a BEVO album.' },
+    ],
+    status: 'Submissions open in Phase 3 of the roadmap. Join the list and you’ll hear first.',
+  },
+
+  // ── Gallery ───────────────────────────────────────────────────────────────
+  // Every image has a literary root: `poem` is the line it grew from.
+  // PLACEHOLDER LINES: replace each `poem` with your own words.
+  gallery: [
     {
-      id:    'b1',
-      title: 'Title of First Book',
-      genre: 'Poetry Collection',
-      year:  '2024',
-      desc:  'A collection of verse tracing the edges of faith, art, and digital existence.',
-      link:  '#',
-      cover: '',
+      id:    'g1',
+      title: 'Silence Is Not Free',
+      poem:  'They covered the mouth and called it safety. The art remained.',
+      src:   'images/freeart.png',
     },
     {
-      id:    'b2',
-      title: 'Title of Short Story',
-      genre: 'Short Fiction',
-      year:  '2023',
-      desc:  'A story set in the spaces between intention and outcome.',
-      link:  '#',
-      cover: '',
+      id:    'g2',
+      title: 'Fractured',
+      poem:  'The face behind the frame knows which mirror lies.',
+      src:   'images/art-watercolor.jpg',
     },
     {
-      id:    'b3',
-      title: 'Coming Soon',
-      genre: '',
-      year:  '2026',
-      desc:  '',
-      link:  '#',
-      cover: '',
+      id:    'g3',
+      title: 'Ascension',
+      poem:  'Arms wide as the horizon. Stone holds the light.',
+      src:   'images/art-figure.png',
+    },
+    {
+      id:    'g4',
+      title: 'Classical Frequency',
+      poem:  'Even marble chews gum.',
+      src:   'images/art-david.jpg',
+    },
+    {
+      id:    'g5',
+      title: 'Tribal Memory',
+      poem:  'These lines were drawn before language.',
+      src:   'images/tribal-pattern.jpg',
+    },
+    {
+      id:    'g6',
+      title: 'Next piece in progress',
+      poem:  '',
+      src:   '',
     },
   ],
 
+  // ── Words: poetry & prose ─────────────────────────────────────────────────
+  // PLACEHOLDERS: replace with your real poems and books.
+  poetry: [
+    { id: 'p1', title: 'Stone and Light',       year: '2024', excerpt: 'Rise above the noise / arms wide as the horizon' },
+    { id: 'p2', title: 'Blue Truth',            year: '2024', excerpt: 'The face behind the frame / knows which mirror lies' },
+    { id: 'p3', title: 'The Token and the Song',year: '2023', excerpt: 'They said art had no price. / We gave it a contract address.' },
+    { id: 'p4', title: 'Caribbean Frequency',   year: '2023', excerpt: 'The island does not hurry. / It arrives exactly when it means to.' },
+  ],
+
+  books: [
+    { id: 'b1', title: 'Title of first book', genre: 'Poetry collection', year: '2024', desc: 'One line on what the book is about.', link: '' },
+    { id: 'b2', title: 'Title of short story', genre: 'Short fiction',   year: '2023', desc: 'One line on what the story is about.', link: '' },
+  ],
+
+  // ── Token (whitepaper v2.3) ───────────────────────────────────────────────
   token: {
-    name:            'BEVO Token',
-    symbol:          'BEVO',
+    name:            'BEVO NFT ART TOKEN',
+    symbol:          '$BEVO',
     chain:           'Binance Smart Chain',
     standard:        'BEP-20',
-    totalSupply:     '5,000,000,000',
-    contractAddress: 'REPLACE_WITH_CONTRACT_ADDRESS',
-    bscscanUrl:      'https://bscscan.com/token/REPLACE_WITH_CONTRACT_ADDRESS',
-    tax: {
-      total:     '4%',
-      burn:      '1%',
-      reflect:   '1%',
-      dev:       '1%',
-      liquidity: '1%',
-    },
-    stats: {
-      holders:   '2,000+',
-      liquidity: 'Locked 5yr',
-      burned:    '20%',
-      presale:   '500 BNB',
-    },
+    dex:             'PancakeSwap V3',
+    contractAddress: '',   // paste the address here at launch; buy buttons appear automatically
+    stats: [
+      { value: '5B',  label: 'Fixed supply, no minting' },
+      { value: '0%',  label: 'Transfer tax' },
+      { value: '20%', label: 'Burned at launch' },
+      { value: '2:1', label: 'V1 holder airdrop' },
+    ],
+    distribution: [
+      { label: 'Launch burn',       tokens: '1,000,000,000', pct: '20%', purpose: 'Immediate deflationary signal' },
+      { label: 'Public presale',    tokens: '1,500,000,000', pct: '30%', purpose: 'Community distribution' },
+      { label: 'Liquidity pool',    tokens: '1,000,000,000', pct: '20%', purpose: 'PancakeSwap V3 initial LP' },
+      { label: 'Treasury',          tokens: '750,000,000',   pct: '15%', purpose: 'Burns, airdrops, LP deepening' },
+      { label: 'V1 holder airdrop', tokens: '500,000,000',   pct: '10%', purpose: '2:1 claim for V1 holders' },
+      { label: 'Development',       tokens: '250,000,000',   pct: '5%',  purpose: 'Ongoing creative and tech work' },
+    ],
+    v1Note: 'Every verified V1 holder can claim in V2: 2 V1 BEVO = 1 V2 BEVO. The snapshot is taken at the time of the January 2023 exploit. Claim details are announced at launch, and nothing is needed from you before then.',
+    roadmap: [
+      { phase: 'Phase 1', items: ['V2 contract deployed on BSC', 'PancakeSwap V3 pool launched', '20% launch burn on-chain', 'V1 holder snapshot published'] },
+      { phase: 'Phase 2', items: ['V1 2:1 airdrop claim portal', 'NFT minting begins on bevo.art', 'Independent audit published'] },
+      { phase: 'Phase 3', items: ['First treasury burn', 'First holder airdrop', 'Open submissions return', 'Holder voting on featured work'] },
+      { phase: 'Phase 4', items: ['Ongoing NFT drops, burns and LP deepening', 'BEVO Artists roster', 'First BEVO album'] },
+    ],
+  },
+
+  // ── A message from Bevo (from the whitepaper, in Bevo's words) ────────────
+  message: {
+    quote: 'Art does not begin with a canvas. It begins with a thought.',
+    paragraphs: [
+      'That same paintbrush is now in everyone’s hands. Endless AI artwork is crowding every channel, and in that noise it is hard for real art to be discovered. That is where BEVO comes in — an art platform that curates art based on the people who create and consume it.',
+      'The original BEVO Token launched in 2021 with a singular ambition: to become the de facto art token on the Binance Smart Chain. It sold out a 500 BNB presale on DxSale and proved that a community trusted in art as a store of value.',
+      'BEVO is the ultimate creative outlet for us. Music, poems, digital art, books and stories — everything is AI powered, and all of it is anchored to a single token on the Binance Smart Chain.',
+    ],
+    signoff: 'This is my new message.',
   },
 
 };

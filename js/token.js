@@ -1,66 +1,92 @@
-/* ─── Token ──────────────────────────────────────────────────────────────── */
+/* ─── Token section ───────────────────────────────────────────────────────
+   Renders from BEVO.token in content.js (figures match whitepaper v2.3).
+   Until contractAddress is filled in, the section says "pending deployment"
+   and shows no buy buttons. Paste the address at launch and the BscScan
+   and PancakeSwap buttons appear on their own.
+──────────────────────────────────────────────────────────────────────── */
 
-const BSCSCAN_API_KEY = 'YOUR_BSCSCAN_API_KEY';
-
-async function fetchLiveStats(contractAddress) {
-  if (!contractAddress || contractAddress.startsWith('REPLACE')) return null;
-  try {
-    const res = await fetch(
-      `https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${BSCSCAN_API_KEY}`
-    );
-    const data = await res.json();
-    return data.status === '1' ? data : null;
-  } catch {
-    return null;
-  }
-}
-
-(async function () {
-  const container = document.getElementById('token-block');
-  if (!container || !window.BEVO) return;
+(function () {
+  const el = document.getElementById('token-block');
+  if (!el || !window.BEVO || !BEVO.token) return;
 
   const t = BEVO.token;
-  const s = t.stats;
+  const wp = BEVO.site && BEVO.site.whitepaper;
+  const tg = BEVO.social && BEVO.social.telegram;
+  const ca = (t.contractAddress || '').trim();
 
-  container.innerHTML = `
-    <div class="token-block">
-      <p class="section-label">On-Chain</p>
-      <h2 class="section-title">${t.name}</h2>
+  const actions = ca
+    ? `<a href="https://pancakeswap.finance/swap?outputCurrency=${ca}&chain=bsc" target="_blank" rel="noopener" class="btn btn-gold">Buy on PancakeSwap</a>
+       <a href="https://bscscan.com/token/${ca}" target="_blank" rel="noopener" class="btn btn-ghost">View on BscScan</a>`
+    : `${wp ? `<a href="${wp}" target="_blank" rel="noopener" class="btn btn-gold">Read the whitepaper</a>` : ''}
+       ${tg ? `<a href="${tg}" target="_blank" rel="noopener" class="btn btn-ghost">Join Telegram</a>` : ''}`;
+
+  el.innerHTML = `
+    <div class="section-header">
+      <p class="section-label">The engine underneath</p>
+      <h2 class="section-title">${t.symbol}</h2>
       <div class="section-rule"></div>
+      <p class="token-lead">A fixed-supply, zero-tax ${t.standard} token on ${t.chain}, traded on ${t.dex}.</p>
+      <p class="token-motto">Clean by design. Deflationary by discipline.</p>
+    </div>
 
-      <div class="token-stats">
+    <div class="token-stats">
+      ${t.stats.map(s => `
         <div class="token-stat">
-          <div class="token-stat-value">${s.holders}</div>
-          <div class="token-stat-label">Holders</div>
-        </div>
-        <div class="token-stat">
-          <div class="token-stat-value">${t.totalSupply.split(',')[0]}B</div>
-          <div class="token-stat-label">Total Supply</div>
-        </div>
-        <div class="token-stat">
-          <div class="token-stat-value">${s.burned}</div>
-          <div class="token-stat-label">Burned on Launch</div>
-        </div>
-        <div class="token-stat">
-          <div class="token-stat-value">${t.tax.total}</div>
-          <div class="token-stat-label">Transaction Tax</div>
-        </div>
+          <div class="token-stat-value">${s.value}</div>
+          <div class="token-stat-label">${s.label}</div>
+        </div>`).join('')}
+    </div>
+
+    <div class="token-grid">
+      <div>
+        <h3 class="token-subhead">Distribution</h3>
+        <table class="dist-table">
+          <thead>
+            <tr><th>Allocation</th><th class="num">Tokens</th><th class="num">Share</th><th class="purpose">Purpose</th></tr>
+          </thead>
+          <tbody>
+            ${t.distribution.map(d => `
+              <tr>
+                <td>${d.label}</td>
+                <td class="num">${d.tokens}</td>
+                <td class="num">${d.pct}</td>
+                <td class="purpose">${d.purpose}</td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
       </div>
 
-      <p style="font-size:var(--text-sm);color:var(--color-text-mid);margin-bottom:var(--space-4);">
-        ${t.chain} · ${t.standard} · Liquidity locked 5 years
-      </p>
+      <div class="token-side">
+        <div class="token-note">
+          <h3>For V1 holders</h3>
+          <p>${t.v1Note}</p>
+        </div>
 
-      <div class="token-address">
-        <span style="color:var(--color-text-faint);flex-shrink:0;">CA</span>
-        <span id="contract-addr">${t.contractAddress}</span>
-        <button onclick="navigator.clipboard.writeText('${t.contractAddress}')" style="margin-left:auto;color:var(--color-gold-dim);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:0.1em;" aria-label="Copy address">COPY</button>
-      </div>
+        <div class="token-contract">
+          <span>Contract</span>
+          <span id="token-ca">${ca || 'Pending deployment'}</span>
+          ${ca ? `<button type="button" class="token-copy" id="token-copy">Copy</button>` : ''}
+        </div>
 
-      <div style="margin-top:var(--space-8);display:flex;gap:var(--space-4);flex-wrap:wrap;">
-        <a href="${t.bscscanUrl}" target="_blank" rel="noopener" class="btn btn-gold">View on BscScan</a>
-        <a href="https://pancakeswap.finance/swap?outputCurrency=${t.contractAddress}" target="_blank" rel="noopener" class="btn btn-ghost">Buy on PancakeSwap</a>
+        <div class="token-actions">${actions}</div>
       </div>
     </div>
-  `;
+
+    <div class="roadmap">
+      ${t.roadmap.map(r => `
+        <div class="roadmap-phase">
+          <h3>${r.phase}</h3>
+          <ul>${r.items.map(i => `<li>${i}</li>`).join('')}</ul>
+        </div>`).join('')}
+    </div>`;
+
+  const copy = document.getElementById('token-copy');
+  if (copy) {
+    copy.addEventListener('click', () => {
+      navigator.clipboard.writeText(ca).then(() => {
+        copy.textContent = 'Copied';
+        setTimeout(() => (copy.textContent = 'Copy'), 2000);
+      });
+    });
+  }
 })();
