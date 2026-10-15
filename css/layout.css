@@ -242,58 +242,6 @@
   width: 100%;
 }
 
-.music-links {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: var(--space-8);
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-}
-
-.music-release-label {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  letter-spacing: var(--tracking-wide);
-  color: var(--color-gold-dim);
-  margin-bottom: var(--space-2);
-}
-
-.music-release-title {
-  font-size: var(--text-5xl);
-  font-weight: 300;
-  line-height: 1;
-  color: var(--color-text);
-}
-
-.music-release-meta {
-  font-style: italic;
-  color: var(--color-text-mid);
-  margin-bottom: var(--space-6);
-}
-
-.music-tracklist {
-  list-style: decimal-leading-zero;
-  padding-left: 2.2em;
-  margin-bottom: var(--space-8);
-  font-size: var(--text-lg);
-  color: var(--color-text);
-}
-.music-tracklist li {
-  padding-block: var(--space-2);
-  border-bottom: 1px solid var(--color-border);
-}
-.music-tracklist li::marker {
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  color: var(--color-text-faint);
-}
-
-.music-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-}
 
 /* ─── Token ──────────────────────────────────────────────────────────────── */
 
