@@ -1,170 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="BEVO — AI art born from poetry. Music, books, stories, and NFTs on Binance Smart Chain." />
-  <meta property="og:title" content="BEVO | bevo.art" />
-  <meta property="og:description" content="Where poems become worlds." />
-  <meta property="og:url" content="https://bevo.art" />
-  <title>BEVO | bevo.art</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEVO — Art. Music. Poetry. Token.</title>
+  <meta name="description" content="Original art, music, poetry and digital NFTs by Bevo. BEVO token on Binance Smart Chain.">
+  <meta property="og:title" content="BEVO — Art. Music. Poetry. Token.">
+  <meta property="og:description" content="Original art, music, poetry and digital NFTs by Bevo.">
+  <meta property="og:image" content="images/bevo-logo.png">
+  <meta name="theme-color" content="#0a0806">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/bevo-logo-silver.png">
 
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/tokens.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/sections.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" id="main-nav">
-    <a href="index.html" class="nav-logo">
-      BEVO
-      <span>bevo.art</span>
-    </a>
-    <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu">&#9776;</button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="pages/gallery.html">Gallery</a></li>
-      <li><a href="pages/poetry.html">Poetry</a></li>
-      <li><a href="pages/music.html">Music</a></li>
-      <li><a href="pages/books.html">Books</a></li>
-      <li><a href="pages/token.html">Token</a></li>
-      <li><a href="pages/about.html">About</a></li>
-    </ul>
-  </nav>
+  <!-- ─── Navigation ──────────────────────────────────────────────────────── -->
+  <header id="nav" class="nav">
+    <div class="container nav-inner">
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="eyebrow">Art · Poetry · Music · NFT — Binance Smart Chain</div>
-    <h1 class="hero-title">
-      Where <em>poems</em> become<br>worlds
-    </h1>
-    <p class="hero-sub">
-      AI-generated visuals born from original poetry. Music on Spotify &amp; Apple Music.
-      Stories. Books. A living archive of one creative mind.
-    </p>
-    <div class="hero-actions">
-      <a href="pages/gallery.html" class="btn btn-primary">Enter the gallery</a>
-      <a href="pages/token.html" class="btn btn-ghost">Explore BEVO token</a>
+      <a href="/" class="nav-logo" aria-label="BEVO home">
+        <img
+          class="nav-logo-wordmark"
+          src="images/bevo-wordmark.png"
+          alt="BevO"
+          height="38"
+        >
+        <span class="nav-logo-domain">bevo.art</span>
+      </a>
+
+      <nav id="nav-links" class="nav-links" aria-label="Main navigation">
+        <a href="#gallery"  class="nav-link">Gallery</a>
+        <a href="#poetry"   class="nav-link">Poetry</a>
+        <a href="#music"    class="nav-link">Music</a>
+        <a href="#books"    class="nav-link">Books</a>
+        <a href="#token"    class="nav-link">Token</a>
+        <a href="#about"    class="nav-link">About</a>
+        <a href="#token"    class="nav-cta">Buy BEVO</a>
+      </nav>
+
+      <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
-  </section>
+  </header>
 
-  <!-- GALLERY PREVIEW -->
-  <div class="section-divider" data-label="Gallery"></div>
-  <section class="section" id="gallery-preview">
-    <div class="section-header">
-      <h2 class="section-title">Art Gallery</h2>
-      <div class="section-rule"></div>
-      <a href="pages/gallery.html" class="section-link">View all →</a>
-    </div>
-    <!-- Populated by js/gallery.js -->
-    <div class="gallery-grid" id="gallery-preview-grid"></div>
-  </section>
+  <main>
 
-  <!-- POETRY PREVIEW -->
-  <div class="section-divider" data-label="Poetry"></div>
-  <section class="section" id="poetry-preview">
-    <div class="section-header">
-      <h2 class="section-title">Poetry</h2>
-      <div class="section-rule"></div>
-      <a href="pages/poetry.html" class="section-link">Read all →</a>
-    </div>
-    <!-- Populated by js/poetry.js -->
-    <div class="poetry-grid" id="poetry-preview-grid"></div>
-  </section>
+    <!-- ─── Hero ──────────────────────────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-noise"></div>
 
-  <!-- MUSIC PREVIEW -->
-  <div class="section-divider" data-label="Music"></div>
-  <section class="section" id="music-preview">
-    <div class="section-header">
-      <h2 class="section-title">Music</h2>
-      <div class="section-rule"></div>
-      <a href="pages/music.html" class="section-link">Listen →</a>
-    </div>
-    <!-- Populated by js/music.js -->
-    <div class="music-cards" id="music-preview-cards"></div>
-  </section>
-
-  <!-- BOOKS PREVIEW -->
-  <div class="section-divider" data-label="Books &amp; Stories"></div>
-  <section class="section" id="books-preview">
-    <div class="section-header">
-      <h2 class="section-title">Books &amp; Stories</h2>
-      <div class="section-rule"></div>
-      <a href="pages/books.html" class="section-link">Browse →</a>
-    </div>
-    <!-- Populated by js/books.js -->
-    <div class="books-grid" id="books-preview-grid"></div>
-  </section>
-
-  <!-- TOKEN -->
-  <div class="section-divider" data-label="BEVO Token"></div>
-  <section class="section" id="token-preview">
-    <div class="token-block">
-      <div class="token-copy">
-        <div class="token-label">BEVO NFT Art Token — BSC</div>
-        <h2 class="token-headline">Own a piece<br>of the work</h2>
-        <p class="token-desc">
-          BEVO is the token at the center of this creative universe. Collect original NFTs,
-          support the art, and participate in the ecosystem built on Binance Smart Chain.
+      <div class="container hero-body">
+        <p class="hero-eyebrow">bevo.art — digital art · music · poetry · nft</p>
+        <h1 class="hero-headline">
+          Art is the only<br>
+          <em>honest</em> currency.
+        </h1>
+        <p class="hero-sub">
+          Original works across canvas, verse, and sound — tokenised on Binance Smart Chain.
         </p>
         <div class="hero-actions">
-          <a href="pages/token.html" class="btn btn-primary">Buy BEVO</a>
-          <a href="#" class="btn btn-ghost" id="bscscan-link" target="_blank" rel="noopener">View on BSCScan</a>
+          <a href="#gallery" class="btn btn-gold">Explore the Work</a>
+          <a href="#token"   class="btn btn-ghost">BEVO Token</a>
         </div>
       </div>
-      <!-- Populated by js/token.js (live stats from BSC) -->
-      <div class="token-stats" id="token-stats-grid"></div>
-    </div>
-  </section>
 
-  <!-- ABOUT PREVIEW -->
-  <div class="section-divider" data-label="About"></div>
-  <section class="section" id="about-preview">
-    <div class="about-block">
-      <div class="about-portrait">
-        <!-- Replace src with your actual photo -->
-        <img src="assets/images/portrait.jpg" alt="BEVO — artist portrait" onerror="this.style.display='none'" />
-        <div class="about-portrait-placeholder">
-          <svg width="48" height="64" viewBox="0 0 48 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <circle cx="24" cy="20" r="14" stroke="rgba(200,180,140,0.25)" stroke-width="0.5"/>
-            <path d="M4 60 Q4 40 24 40 Q44 40 44 60" stroke="rgba(200,180,140,0.2)" stroke-width="0.5"/>
-          </svg>
-          <span>Portrait</span>
+      <div class="hero-scroll" aria-hidden="true">
+        <div class="hero-scroll-line"></div>
+        scroll
+      </div>
+    </section>
+
+    <!-- ─── Gallery ───────────────────────────────────────────────────────── -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Visual Art</p>
+          <h2 class="section-title">The Gallery</h2>
+          <div class="section-rule"></div>
+        </div>
+        <div id="gallery-grid" class="gallery-grid"></div>
+        <div style="margin-top:var(--space-8);text-align:center;">
+          <a href="pages/gallery.html" class="btn btn-ghost">View Full Gallery</a>
         </div>
       </div>
-      <div class="about-text">
-        <h2 class="about-name">BEVO</h2>
-        <div class="about-role">Poet · Visual Artist · Musician · Storyteller</div>
-        <!-- Edit bio in js/content.js or directly here -->
-        <p class="about-bio" id="about-bio-text"></p>
-        <div class="about-tags" id="about-tags"></div>
-        <a href="pages/about.html" class="btn btn-ghost" style="margin-top:1.8rem;display:inline-block;">Full story →</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FOOTER -->
+    <hr class="gold-rule">
+
+    <!-- ─── Poetry ────────────────────────────────────────────────────────── -->
+    <section id="poetry" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Words</p>
+          <h2 class="section-title">Poetry</h2>
+          <div class="section-rule"></div>
+        </div>
+        <div id="poetry-list" class="poetry-list"></div>
+        <div style="margin-top:var(--space-8);">
+          <a href="pages/poetry.html" class="btn btn-ghost">All Poems</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="gold-rule">
+
+    <!-- ─── Music ─────────────────────────────────────────────────────────── -->
+    <section id="music" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Sound</p>
+          <h2 class="section-title">Music</h2>
+          <div class="section-rule"></div>
+        </div>
+        <div class="music-embeds">
+          <!-- Replace the src values with your actual Spotify / Apple embed URLs -->
+          <div class="music-embed-wrap">
+            <iframe
+              src="https://open.spotify.com/embed/artist/REPLACE_SPOTIFY_ID?utm_source=generator&theme=0"
+              width="100%"
+              height="352"
+              frameborder="0"
+              allowfullscreen=""
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="BEVO on Spotify"
+            ></iframe>
+          </div>
+          <div class="music-embed-wrap" style="display:flex;align-items:center;justify-content:center;padding:var(--space-8);background:var(--color-bg-card);border:1px solid var(--color-border);">
+            <div style="text-align:center;">
+              <p class="section-label" style="margin-bottom:var(--space-4);">Also available on</p>
+              <a href="https://music.apple.com/artist/REPLACE_APPLE_ID" target="_blank" rel="noopener" class="btn btn-gold">Apple Music</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="gold-rule">
+
+    <!-- ─── Books ─────────────────────────────────────────────────────────── -->
+    <section id="books" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Writing</p>
+          <h2 class="section-title">Books &amp; Stories</h2>
+          <div class="section-rule"></div>
+        </div>
+        <div id="books-grid" class="books-grid"></div>
+      </div>
+    </section>
+
+    <hr class="gold-rule">
+
+    <!-- ─── Token ─────────────────────────────────────────────────────────── -->
+    <section id="token" class="section">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-label">Blockchain</p>
+          <h2 class="section-title">BEVO Token</h2>
+          <div class="section-rule"></div>
+        </div>
+        <div id="token-block"></div>
+      </div>
+    </section>
+
+    <hr class="gold-rule">
+
+    <!-- ─── About ─────────────────────────────────────────────────────────── -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-layout">
+          <div class="about-img-wrap">
+            <img src="images/art-figure.png" alt="Bevo" loading="lazy">
+          </div>
+          <div class="about-body">
+            <p class="section-label">The Artist</p>
+            <h2 class="section-title" style="margin-bottom:var(--space-6);">About Bevo</h2>
+            <div class="section-rule" style="margin-bottom:var(--space-8);"></div>
+            <div id="about-text"></div>
+            <a href="pages/about.html" class="btn btn-gold" style="margin-top:var(--space-8);">Full Bio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── Footer ────────────────────────────────────────────────────────── -->
   <footer class="footer">
-    <div class="footer-logo">BEVO · bevo.art</div>
-    <div class="bsc-badge">On Binance Smart Chain</div>
-    <div class="footer-copy">© 2026 BEVO — All rights reserved</div>
+    <div class="container footer-inner">
+      <div class="footer-logo">
+        <img src="images/bevo-logo-silver.png" alt="BEVO" width="32" height="32">
+        <img src="images/bevo-wordmark.png" alt="BevO" height="24" class="footer-wordmark">
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#gallery"  class="footer-link">Gallery</a>
+        <a href="#poetry"   class="footer-link">Poetry</a>
+        <a href="#music"    class="footer-link">Music</a>
+        <a href="#token"    class="footer-link">Token</a>
+        <a href="https://t.me/bevotoken" target="_blank" rel="noopener" class="footer-link">Telegram</a>
+      </nav>
+      <p class="footer-copy" id="footer-year">© 2026 bevo.art</p>
+    </div>
   </footer>
 
-  <!-- SCRIPTS — order matters -->
+  <!-- ─── Scripts ───────────────────────────────────────────────────────── -->
   <script src="js/content.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/gallery.js"></script>
   <script src="js/poetry.js"></script>
-  <script src="js/music.js"></script>
-  <script src="js/books.js"></script>
   <script src="js/token.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    // Books
+    (function() {
+      const g = document.getElementById('books-grid');
+      if (!g || !window.BEVO) return;
+      g.innerHTML = BEVO.books.map(b => `
+        <article class="card book-card">
+          <div class="book-cover">${b.cover ? `<img src="${b.cover}" alt="${b.title}">` : '✦'}</div>
+          <div>
+            ${b.genre ? `<p class="book-genre">${b.genre} · ${b.year}</p>` : ''}
+            <h3 class="book-title">${b.title}</h3>
+            ${b.desc ? `<p class="book-desc">${b.desc}</p>` : ''}
+            ${b.link && b.link !== '#' ? `<a href="${b.link}" class="btn btn-ghost" style="margin-top:var(--space-4);" target="_blank">Read</a>` : ''}
+          </div>
+        </article>
+      `).join('');
+    })();
+
+    // About text
+    (function() {
+      const el = document.getElementById('about-text');
+      if (!el || !window.BEVO) return;
+      el.innerHTML = BEVO.about.bio.map(p => `<p>${p}</p>`).join('');
+    })();
+
+    // Footer year
+    document.getElementById('footer-year').textContent = `© ${new Date().getFullYear()} bevo.art`;
+  </script>
 
 </body>
 </html>

@@ -1,58 +1,66 @@
-/* ============================================================
-   BEVO DESIGN TOKENS
-   Edit this file to change the visual identity site-wide.
-   ============================================================ */
+/* ─── BEVO.ART Design Tokens ─────────────────────────────────────────────── */
 
 :root {
-
-  /* --- Palette --- */
+  /* Color */
   --color-bg:           #0a0806;
-  --color-bg-surface:   #0d0b09;
-  --color-bg-elevated:  #111009;
-
+  --color-bg-raised:    #100e0b;
+  --color-bg-card:      #141210;
   --color-gold:         #c8b48c;
-  --color-gold-muted:   rgba(200, 180, 140, 0.4);
-  --color-gold-faint:   rgba(200, 180, 140, 0.12);
+  --color-gold-dim:     #8a7a60;
+  --color-gold-bright:  #e0cda8;
+  --color-text:         #e8e0d4;
+  --color-text-mid:     #a09080;
+  --color-text-faint:   #5a5248;
+  --color-border:       rgba(200,180,140,0.12);
+  --color-border-mid:   rgba(200,180,140,0.25);
 
-  --color-text:         #e8e0d0;
-  --color-text-muted:   rgba(232, 224, 208, 0.55);
-  --color-text-faint:   rgba(232, 224, 208, 0.25);
+  /* Typography */
+  --font-display:  'Cormorant Garamond', Georgia, serif;
+  --font-mono:     'Space Mono', 'Courier New', monospace;
+  --font-sans:     'Inter', system-ui, sans-serif;
 
-  --color-border:       rgba(200, 180, 140, 0.12);
-  --color-border-mid:   rgba(200, 180, 140, 0.2);
-  --color-border-glow:  rgba(200, 180, 140, 0.35);
-
-  /* --- Typography --- */
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-mono:    'Space Mono', 'Courier New', monospace;
-
-  /* --- Type scale --- */
-  --text-xs:   0.55rem;
-  --text-sm:   0.75rem;
+  /* Type scale */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
   --text-base: 1rem;
-  --text-md:   1.1rem;
-  --text-lg:   1.5rem;
-  --text-xl:   2rem;
-  --text-2xl:  2.5rem;
-  --text-hero: clamp(3rem, 7vw, 5.5rem);
+  --text-lg:   1.125rem;
+  --text-xl:   1.375rem;
+  --text-2xl:  1.75rem;
+  --text-3xl:  2.25rem;
+  --text-4xl:  3rem;
+  --text-5xl:  4rem;
+  --text-hero: clamp(3.5rem, 9vw, 7rem);
 
-  /* --- Spacing --- */
-  --space-xs:  0.5rem;
-  --space-sm:  1rem;
-  --space-md:  1.5rem;
-  --space-lg:  2.5rem;
-  --space-xl:  4rem;
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
 
-  /* --- Layout --- */
-  --max-width: 1200px;
-  --section-pad: 4rem 2.5rem;
+  /* Layout */
+  --max-width: 1280px;
+  --gutter:    clamp(1rem, 4vw, 3rem);
 
-  /* --- Transitions --- */
-  --transition: 0.25s ease;
+  /* Tracking */
+  --tracking-tight:  -0.02em;
+  --tracking-normal: 0.02em;
+  --tracking-wide:   0.1em;
+  --tracking-logo:   0.3em;
 
-  /* --- Letter spacing --- */
-  --tracking-wide:  0.15em;
-  --tracking-wider: 0.25em;
-  --tracking-logo:  0.35em;
+  /* Transitions */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 150ms;
+  --dur-mid:  300ms;
+  --dur-slow: 600ms;
 
+  /* Borders */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-full: 9999px;
 }

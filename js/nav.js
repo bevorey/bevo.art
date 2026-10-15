@@ -1,28 +1,23 @@
-/* ============================================================
-   NAV.JS
-   Mobile hamburger toggle + active link detection.
-   ============================================================ */
+/* ─── Navigation ─────────────────────────────────────────────────────────── */
 
 (function () {
+  const nav = document.getElementById('nav');
   const toggle = document.getElementById('nav-toggle');
-  const links  = document.getElementById('nav-links');
+  const links = document.getElementById('nav-links');
 
-  if (toggle && links) {
-    toggle.addEventListener('click', () => {
-      links.classList.toggle('open');
-    });
+  // Scroll state
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
 
-    // Close menu when a link is clicked (mobile)
-    links.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => links.classList.remove('open'));
-    });
-  }
+  // Mobile toggle
+  toggle && toggle.addEventListener('click', () => {
+    links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', links.classList.contains('open'));
+  });
 
-  // Highlight the active nav link based on current page
-  const currentPath = window.location.pathname;
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    if (a.getAttribute('href') && currentPath.endsWith(a.getAttribute('href'))) {
-      a.classList.add('active');
-    }
+  // Close on link click (mobile)
+  links && links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
   });
 })();

@@ -1,34 +1,16 @@
-/* ============================================================
-   POETRY.JS
-   Renders poem cards from BEVO.poetry content data.
-   ============================================================ */
+/* ─── Poetry ─────────────────────────────────────────────────────────────── */
 
 (function () {
-  const { poetry } = window.BEVO;
+  const container = document.getElementById('poetry-list');
+  if (!container || !window.BEVO) return;
 
-  function renderCard(poem) {
-    const el = document.createElement('div');
-    el.className = 'poem-card';
-    el.innerHTML = `
-      <p class="poem-text">${poem.excerpt.join('<br>')}</p>
-      <div class="poem-title">— From "${poem.title}"</div>
-    `;
-    return el;
-  }
-
-  // Homepage preview — first 2
-  const previewGrid = document.getElementById('poetry-preview-grid');
-  if (previewGrid) {
-    poetry.slice(0, 2).forEach(p => previewGrid.appendChild(renderCard(p)));
-  }
-
-  // Full poetry page
-  const fullGrid = document.getElementById('poetry-full-grid');
-  if (fullGrid) {
-    if (poetry.length === 0) {
-      fullGrid.innerHTML = '<p class="empty-state">Poems coming soon.</p>';
-    } else {
-      poetry.forEach(p => fullGrid.appendChild(renderCard(p)));
-    }
-  }
+  container.innerHTML = BEVO.poetry.map(poem => `
+    <article class="poem-item">
+      <div>
+        <h3 class="poem-title">${poem.title}</h3>
+        <p class="poem-excerpt">${poem.excerpt}</p>
+      </div>
+      <span class="poem-meta">${poem.year}</span>
+    </article>
+  `).join('');
 })();

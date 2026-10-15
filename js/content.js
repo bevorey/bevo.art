@@ -1,163 +1,188 @@
-/* ============================================================
-   CONTENT.JS
-   Edit this file to update ALL content across the site.
-   This is your single source of truth — no need to touch HTML.
-   ============================================================ */
+/* ─── BEVO.ART — Single source of truth for all site content ──────────────── */
 
-const BEVO = {
+window.BEVO = {
 
-  // --- Site meta ---
   site: {
-    name: 'BEVO',
-    domain: 'bevo.art',
-    tagline: 'Where poems become worlds',
-    description: 'AI-generated visuals born from original poetry. Music, books, stories, and NFTs on Binance Smart Chain.',
+    name:        'BEVO',
+    domain:      'bevo.art',
+    tagline:     'Art. Music. Poetry. Token.',
+    description: 'Original art, music, poetry and digital NFTs by Bevo.',
+    year:        2026,
   },
 
-  // --- About / Bio ---
   about: {
-    name: 'BEVO',
-    role: 'Poet · Visual Artist · Musician · Storyteller',
+    headline: 'Art is the only honest currency.',
     bio: [
-      'A creative mind working at the intersection of language and image. Using AI as a brush, original poems become visual worlds — strange, intimate, and uncompromising.',
-      'Music released on Spotify and Apple Music. Short stories and books in progress. BEVO NFT Art Token is the digital extension of this practice — a way to collect, own, and inhabit the work.',
+      'I am Bevo — poet, musician, visual artist, and the architect of the BEVO token. My work lives at the intersection of language and image: poems that become paintings, songs that carry stories, stories that bleed into verse.',
+      'Since 2021, the BEVO token has been the on-chain vessel for that creative output — born from a 500 BNB presale sellout on DxSale and grown into a community of thousands. v2 is the continuation, rebuilt around my own work.',
+      'Based in the Caribbean. Rooted in the spiritual. Reaching everywhere.',
     ],
-    tags: ['AI Art', 'Poetry', 'Music', 'Short Stories', 'NFT', 'BSC', 'bevo.art'],
-    portrait: '../assets/images/portrait.jpg', // relative path from pages/
+    social: {
+      spotify:    'https://open.spotify.com/artist/',
+      apple:      'https://music.apple.com/artist/',
+      twitter:    'https://twitter.com/bevoart',
+      telegram:   'https://t.me/bevotoken',
+    },
   },
 
-  // --- Gallery ---
-  // Add your artwork here. src = path to image file.
   gallery: [
     {
-      id: 'g01',
-      title: 'Untitled I',
-      poem: 'Orbit',
-      src: '../assets/art/g01.jpg',
-      placeholder: 'orbit',
+      id:          'g1',
+      title:       'Ascension',
+      poem:        'Rise above the noise / arms wide as the horizon / stone holds the light.',
+      src:         'images/art-figure.png',
+      placeholder: '#1a1510',
     },
     {
-      id: 'g02',
-      title: 'Untitled II',
-      poem: 'Fracture',
-      src: '../assets/art/g02.jpg',
-      placeholder: 'fracture',
+      id:          'g2',
+      title:       'Fractured',
+      poem:        'The face behind the frame / knows which mirror lies. / Blue hair. Blue truth.',
+      src:         'images/art-watercolor.jpg',
+      placeholder: '#12181e',
     },
     {
-      id: 'g03',
-      title: 'Untitled III',
-      poem: 'Still Water',
-      src: '../assets/art/g03.jpg',
-      placeholder: 'still-water',
+      id:          'g3',
+      title:       'Silence Is Not Free',
+      poem:        'They covered the mouth / and called it safety. / The art remained.',
+      src:         'images/freeart.png',
+      placeholder: '#0e0e0e',
     },
     {
-      id: 'g04',
-      title: 'Untitled IV',
-      poem: 'Ascent',
-      src: '../assets/art/g04.jpg',
-      placeholder: 'ascent',
+      id:          'g4',
+      title:       'Classical Frequency',
+      poem:        'Even stone has a sense of humor. / Even marble chews gum.',
+      src:         'images/art-david.jpg',
+      placeholder: '#1a1518',
     },
     {
-      id: 'g05',
-      title: 'Untitled V',
-      poem: 'Concentric',
-      src: '../assets/art/g05.jpg',
-      placeholder: 'concentric',
+      id:          'g5',
+      title:       'Tribal Memory',
+      poem:        'These lines were drawn before language. / They remember what words forgot.',
+      src:         'images/tribal-pattern.jpg',
+      placeholder: '#0d0d0d',
     },
-    // Add more: { id, title, poem, src }
+    {
+      id:          'g6',
+      title:       'Coming Soon',
+      poem:        '',
+      src:         '',
+      placeholder: '#100e0b',
+    },
   ],
 
-  // --- Poetry ---
   poetry: [
     {
-      id: 'p01',
-      title: 'The Unsaid',
-      excerpt: [
-        'I have learned to speak',
-        'in the language of absence—',
-        'each silence a word',
-        'I could not find before.',
+      id:      'p1',
+      title:   'Stone and Light',
+      year:    '2024',
+      lines:   [
+        'Rise above the noise',
+        'arms wide as the horizon —',
+        'stone holds the light.',
       ],
-      full: [], // add full poem lines here
+      excerpt: 'Rise above the noise / arms wide as the horizon',
     },
     {
-      id: 'p02',
-      title: 'After Hours',
-      excerpt: [
-        'The night arrives',
-        'not as a thief',
-        'but as a mirror',
-        'showing what the day refused.',
+      id:      'p2',
+      title:   'Blue Truth',
+      year:    '2024',
+      lines:   [
+        'The face behind the frame',
+        'knows which mirror lies.',
+        'Blue hair. Blue truth. Blue everything.',
       ],
-      full: [],
+      excerpt: 'The face behind the frame / knows which mirror lies',
     },
-    // Add more poems: { id, title, excerpt: [], full: [] }
+    {
+      id:      'p3',
+      title:   'The Token and the Song',
+      year:    '2023',
+      lines:   [
+        'They said art had no price.',
+        'We gave it a contract address.',
+        'Now it lives on-chain, permanent, undeniable.',
+      ],
+      excerpt: 'They said art had no price. / We gave it a contract address.',
+    },
+    {
+      id:      'p4',
+      title:   'Caribbean Frequency',
+      year:    '2023',
+      lines:   [
+        'The island does not hurry.',
+        'It arrives exactly when it means to —',
+        'salt and certainty.',
+      ],
+      excerpt: 'The island does not hurry. / It arrives exactly when it means to.',
+    },
   ],
 
-  // --- Music ---
-  // Paste your Spotify & Apple Music artist/album URLs here.
   music: {
     spotify: {
-      artistUrl: 'https://open.spotify.com/artist/YOUR_ID',
-      // For embed: use the embed URL format
-      embedUrl: 'https://open.spotify.com/embed/artist/YOUR_ID',
-      albumTitle: 'Your Album Title',
+      playlistId: 'REPLACE_WITH_SPOTIFY_PLAYLIST_OR_ALBUM_ID',
+      label:      'On Spotify',
     },
-    appleMusic: {
-      artistUrl: 'https://music.apple.com/us/artist/YOUR_ID',
-      embedUrl: 'https://embed.music.apple.com/us/artist/YOUR_ID',
-      albumTitle: 'Your Album Title',
+    apple: {
+      albumId: 'REPLACE_WITH_APPLE_MUSIC_ALBUM_ID',
+      label:   'On Apple Music',
     },
+    tracks: [
+      { title: 'Track title here', year: '2024' },
+      { title: 'Track title here', year: '2024' },
+    ],
   },
 
-  // --- Books & Stories ---
   books: [
     {
-      id: 'b01',
-      title: 'Title Coming Soon',
-      type: 'Short Stories',
-      desc: '',
-      cover: '../assets/images/book-01.jpg',
-      link: '#',
+      id:    'b1',
+      title: 'Title of First Book',
+      genre: 'Poetry Collection',
+      year:  '2024',
+      desc:  'A collection of verse tracing the edges of faith, art, and digital existence.',
+      link:  '#',
+      cover: '',
     },
     {
-      id: 'b02',
-      title: 'Title Coming Soon',
-      type: 'Poetry Collection',
-      desc: '',
-      cover: '../assets/images/book-02.jpg',
-      link: '#',
+      id:    'b2',
+      title: 'Title of Short Story',
+      genre: 'Short Fiction',
+      year:  '2023',
+      desc:  'A story set in the spaces between intention and outcome.',
+      link:  '#',
+      cover: '',
     },
     {
-      id: 'b03',
-      title: 'Title Coming Soon',
-      type: 'Novel / Story',
-      desc: '',
-      cover: '../assets/images/book-03.jpg',
-      link: '#',
+      id:    'b3',
+      title: 'Coming Soon',
+      genre: '',
+      year:  '2026',
+      desc:  '',
+      link:  '#',
+      cover: '',
     },
-    // Add more: { id, title, type, desc, cover, link }
   ],
 
-  // --- BEVO Token ---
   token: {
-    symbol: 'BEVO',
-    network: 'Binance Smart Chain',
-    contractAddress: '', // paste your BSC contract address here
-    bscscanUrl: '', // auto-built in token.js once address is set
-    pancakeswapUrl: '', // add your PancakeSwap pool URL
-    stats: [
-      { label: 'Token Symbol', value: 'BEVO' },
-      { label: 'Network',      value: 'BSC' },
-      { label: 'Token Type',   value: 'NFT' },
-      { label: 'Category',     value: 'Art' },
-      // These get replaced by live data in token.js:
-      // { label: 'Price',     value: '—' },
-      // { label: 'Holders',   value: '—' },
-    ],
+    name:            'BEVO Token',
+    symbol:          'BEVO',
+    chain:           'Binance Smart Chain',
+    standard:        'BEP-20',
+    totalSupply:     '5,000,000,000',
+    contractAddress: 'REPLACE_WITH_CONTRACT_ADDRESS',
+    bscscanUrl:      'https://bscscan.com/token/REPLACE_WITH_CONTRACT_ADDRESS',
+    tax: {
+      total:     '4%',
+      burn:      '1%',
+      reflect:   '1%',
+      dev:       '1%',
+      liquidity: '1%',
+    },
+    stats: {
+      holders:   '2,000+',
+      liquidity: 'Locked 5yr',
+      burned:    '20%',
+      presale:   '500 BNB',
+    },
   },
 
 };
-
-// Make available globally
-window.BEVO = BEVO;

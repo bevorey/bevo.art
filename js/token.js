@@ -1,77 +1,66 @@
-/* ============================================================
-   TOKEN.JS
-   Renders BEVO token stats.
-   Optionally fetches live data from BSCScan API.
+/* ─── Token ──────────────────────────────────────────────────────────────── */
 
-   To enable live data:
-   1. Get a free API key from https://bscscan.com/apis
-   2. Set BSCSCAN_API_KEY below
-   3. Set your contract address in content.js → BEVO.token.contractAddress
-   ============================================================ */
+const BSCSCAN_API_KEY = 'YOUR_BSCSCAN_API_KEY';
 
-const BSCSCAN_API_KEY = ''; // <- paste your BSCScan API key here
-
-(function () {
-  const { token } = window.BEVO;
-
-  // Build BSCScan URL from contract address
-  if (token.contractAddress) {
-    const bscscanEl = document.getElementById('bscscan-link');
-    const url = `https://bscscan.com/token/${token.contractAddress}`;
-    if (bscscanEl) bscscanEl.href = url;
+async function fetchLiveStats(contractAddress) {
+  if (!contractAddress || contractAddress.startsWith('REPLACE')) return null;
+  try {
+    const res = await fetch(
+      `https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=${contractAddress}&apikey=${BSCSCAN_API_KEY}`
+    );
+    const data = await res.json();
+    return data.status === '1' ? data : null;
+  } catch {
+    return null;
   }
+}
 
-  // --- Render static stats from content.js ---
-  function renderStats(stats) {
-    const grid = document.getElementById('token-stats-grid');
-    if (!grid) return;
+(async function () {
+  const container = document.getElementById('token-block');
+  if (!container || !window.BEVO) return;
 
-    grid.innerHTML = '';
-    stats.forEach(({ label, value }) => {
-      const stat = document.createElement('div');
-      stat.className = 'token-stat';
-      stat.innerHTML = `
-        <div class="token-stat-val">${value}</div>
-        <div class="token-stat-label">${label}</div>
-      `;
-      grid.appendChild(stat);
-    });
-  }
+  const t = BEVO.token;
+  const s = t.stats;
 
-  renderStats(token.stats);
+  container.innerHTML = `
+    <div class="token-block">
+      <p class="section-label">On-Chain</p>
+      <h2 class="section-title">${t.name}</h2>
+      <div class="section-rule"></div>
 
-  // --- Fetch live stats from BSCScan (optional) ---
-  async function fetchLiveStats() {
-    if (!token.contractAddress || !BSCSCAN_API_KEY) return;
+      <div class="token-stats">
+        <div class="token-stat">
+          <div class="token-stat-value">${s.holders}</div>
+          <div class="token-stat-label">Holders</div>
+        </div>
+        <div class="token-stat">
+          <div class="token-stat-value">${t.totalSupply.split(',')[0]}B</div>
+          <div class="token-stat-label">Total Supply</div>
+        </div>
+        <div class="token-stat">
+          <div class="token-stat-value">${s.burned}</div>
+          <div class="token-stat-label">Burned on Launch</div>
+        </div>
+        <div class="token-stat">
+          <div class="token-stat-value">${t.tax.total}</div>
+          <div class="token-stat-label">Transaction Tax</div>
+        </div>
+      </div>
 
-    try {
-      // Token supply
-      const supplyRes = await fetch(
-        `https://api.bscscan.com/api?module=stats&action=tokensupply&contractaddress=${token.contractAddress}&apikey=${BSCSCAN_API_KEY}`
-      );
-      const supplyData = await supplyRes.json();
+      <p style="font-size:var(--text-sm);color:var(--color-text-mid);margin-bottom:var(--space-4);">
+        ${t.chain} · ${t.standard} · Liquidity locked 5 years
+      </p>
 
-      // Token holder count
-      const holdersRes = await fetch(
-        `https://api.bscscan.com/api?module=token&action=tokenholderlist&contractaddress=${token.contractAddress}&page=1&offset=1&apikey=${BSCSCAN_API_KEY}`
-      );
+      <div class="token-address">
+        <span style="color:var(--color-text-faint);flex-shrink:0;">CA</span>
+        <span id="contract-addr">${t.contractAddress}</span>
+        <button onclick="navigator.clipboard.writeText('${t.contractAddress}')" style="margin-left:auto;color:var(--color-gold-dim);font-family:var(--font-mono);font-size:var(--text-xs);letter-spacing:0.1em;" aria-label="Copy address">COPY</button>
+      </div>
 
-      const liveStats = [
-        ...token.stats,
-        {
-          label: 'Total Supply',
-          value: supplyData.result
-            ? Number(supplyData.result).toLocaleString()
-            : '—',
-        },
-      ];
-
-      renderStats(liveStats);
-    } catch (err) {
-      console.warn('BSCScan fetch failed:', err);
-      // Fall back to static stats — already rendered
-    }
-  }
-
-  fetchLiveStats();
+      <div style="margin-top:var(--space-8);display:flex;gap:var(--space-4);flex-wrap:wrap;">
+        <a href="${t.bscscanUrl}" target="_blank" rel="noopener" class="btn btn-gold">View on BscScan</a>
+        <a href="https://pancakeswap.finance/swap?outputCurrency=${t.contractAddress}" target="_blank" rel="noopener" class="btn btn-ghost">Buy on PancakeSwap</a>
+      </div>
+    </div>
+  `;
 })();
