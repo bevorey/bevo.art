@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BEVO — What is your art?</title>
-  <meta name="description" content="BEVO is a launchpad for music, art and writing. It begins with the work of Bevo Rey, opens its stage to everyone, and lets $BEVO holders decide who is featured next.">
+  <meta name="description" content="BEVO is an art community that launches music, art and writing. It opens the stage to everyone, and $BEVO holders decide who becomes the next big artist and which works get featured.">
   <meta property="og:title" content="BEVO — What is your art?">
   <meta property="og:description" content="A launchpad for music, art and writing, anchored to $BEVO on Binance Smart Chain.">
   <meta property="og:image" content="images/bevo-logo-silver.png">
@@ -34,7 +34,7 @@
       </a>
 
       <nav id="nav-links" class="nav-links" aria-label="Main navigation">
-        <a href="#music"      class="nav-link">Music</a>
+        <a href="#featured"   class="nav-link">Featured</a>
         <a href="#open-stage" class="nav-link">Open Stage</a>
         <a href="#gallery"    class="nav-link">Gallery</a>
         <a href="#words"      class="nav-link">Words</a>
@@ -59,16 +59,16 @@
       <div class="hero-noise"></div>
 
       <div class="container hero-body">
-        <p class="hero-eyebrow">bevo.art — music · art · words · $BEVO</p>
+        <p class="hero-eyebrow">music · art · writing · token</p>
         <h1 class="hero-headline">
           What is<br>
           your <em>art?</em>
         </h1>
         <p class="hero-sub">
-          BEVO is a launchpad for music, art and writing. It begins with the work of Bevo Rey, opens its stage to everyone, and lets $BEVO holders decide who is featured next.
+          BEVO is an art community that launches music, art and writing. It opens the stage to everyone, and $BEVO holders decide who becomes the next big artist and which works get featured.
         </p>
         <div class="hero-actions">
-          <a href="#music"      class="btn btn-gold">Listen</a>
+          <a href="#token"      class="btn btn-gold">Explore $BEVO</a>
           <a href="#open-stage" class="btn btn-ghost">Become a BEVO Artist</a>
         </div>
       </div>
@@ -81,37 +81,23 @@
       </div>
     </section>
 
-    <!-- ─── Music ─────────────────────────────────────────────────────────── -->
-    <section id="music" class="section">
+    <!-- ─── Featured Artists ──────────────────────────────────────────────── -->
+    <section id="featured" class="section featured" aria-roledescription="carousel" aria-label="Featured artists">
       <div class="container">
-        <div class="section-header">
-          <p class="section-label">Now playing</p>
-          <h2 class="section-title">Music by Bevo Rey</h2>
-          <div class="section-rule"></div>
-        </div>
-        <div class="music-embeds">
-          <div class="music-embed-wrap">
-            <iframe
-              src="https://open.spotify.com/embed/artist/4mF9PGVr6woqdnAS30mKvW?utm_source=generator&theme=0"
-              width="100%"
-              height="450"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-              title="Bevo Rey on Spotify"
-            ></iframe>
+        <div class="spot-head">
+          <div>
+            <p class="section-label">Spotlight</p>
+            <h2 class="section-title">Featured Artists</h2>
+            <div class="section-rule"></div>
           </div>
-          <div class="music-embed-wrap">
-            <iframe
-              src="https://embed.music.apple.com/us/album/35-single/6782352168?theme=dark"
-              width="100%"
-              height="450"
-              allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
-              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-              loading="lazy"
-              title="35 by Bevo Rey on Apple Music"
-            ></iframe>
+          <div class="spot-controls" id="spot-controls">
+            <span class="spot-count" id="spot-count" aria-live="polite"></span>
+            <button type="button" class="spot-arrow" id="spot-prev" aria-label="Previous artist">&#8592;</button>
+            <button type="button" class="spot-arrow" id="spot-next" aria-label="Next artist">&#8594;</button>
           </div>
         </div>
+        <div class="spot-track" id="spot-track" tabindex="0"></div>
+        <div class="spot-names" id="spot-names"></div>
       </div>
     </section>
 
@@ -122,7 +108,7 @@
         <div class="stage-intro">
           <p class="section-label">The Open Stage</p>
           <h2 class="stage-title">Become a BEVO&nbsp;Artist</h2>
-          <div id="stage-intro-text"></div>
+          <div id="stage-intro-text" class="stage-intro-text"></div>
           <ol id="stage-steps" class="stage-steps"></ol>
         </div>
 
@@ -154,6 +140,7 @@
             <select id="f-type" name="type" required>
               <option value="" disabled selected>Choose one</option>
               <option>Music</option>
+              <option>Video and moving art</option>
               <option>Digital art</option>
               <option>Writing</option>
               <option>More than one</option>
@@ -245,6 +232,7 @@
   <script src="js/content.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/carousel.js"></script>
+  <script src="js/featured.js"></script>
   <script src="js/sections.js"></script>
   <script src="js/token.js"></script>
   <script src="js/form.js"></script>

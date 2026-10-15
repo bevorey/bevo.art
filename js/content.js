@@ -33,25 +33,100 @@ window.BEVO = {
     ],
   },
 
-  // ── Music ─────────────────────────────────────────────────────────────────
-  // The players in index.html use these IDs.
-  music: {
-    artistName: 'Bevo Rey',
-    spotifyArtistId: '4mF9PGVr6woqdnAS30mKvW',
-    appleAlbumUrl:   'https://embed.music.apple.com/us/album/35-single/6782352168?theme=dark',
-  },
+  // ── Featured Artists (spotlight after the hero) ───────────────────────────
+  // One entry per artist, shown in order. Each artist has up to three works,
+  // shown side by side: type 'music', 'art' or 'writing'.
+  //   music:   spotifyEmbed (optional player) or cover/links for a simple card
+  //   art:     src (image), caption
+  //   writing: excerpt, link
+  // sample: true shows a "Sample" tag. Remove sample artists before launch.
+  featured: [
+    {
+      id:      'bevo-rey',
+      name:    'Bevo Rey',
+      avatar:  'images/bevo-logo-silver.png',
+      mediums: ['Music', 'Art', 'Writing'],
+      bio:     'Musician, poet and digital artist, and the founder of BEVO. Every image and song starts as words.',
+      links: [
+        { label: 'Spotify',     url: 'https://open.spotify.com/artist/4mF9PGVr6woqdnAS30mKvW' },
+        { label: 'Apple Music', url: 'https://music.apple.com/us/artist/bevo-rey/6781925906' },
+      ],
+      works: [
+        {
+          type:         'music',
+          title:        '35',
+          meta:         'Single, 2026',
+          spotifyEmbed: 'https://open.spotify.com/embed/artist/4mF9PGVr6woqdnAS30mKvW?utm_source=generator&theme=0',
+          appleUrl:     'https://music.apple.com/us/album/35-single/6782352168',
+        },
+        {
+          type:    'art',
+          title:   'Silence Is Not Free',
+          src:     'images/freeart.png',
+          caption: 'They covered the mouth and called it safety. The art remained.',
+        },
+        {
+          type:    'writing',
+          title:   'Stone and Light',   // PLACEHOLDER: swap in a real poem
+          excerpt: 'Rise above the noise / arms wide as the horizon / stone holds the light.',
+          link:    '',
+        },
+      ],
+    },
+
+    // ── Sample artists: placeholders to show the layout. Not real people. ──
+    {
+      id:      'sample-music',
+      sample:  true,
+      name:    'Kairo Wynter',
+      avatar:  'images/tribal-pattern.jpg',
+      mediums: ['Music', 'Video'],
+      bio:     'Producer and singer working between dancehall rhythms and ambient sound.',
+      links:   [],
+      works: [
+        { type: 'music', title: 'Low Tide', meta: 'Single, 2026', cover: 'images/tribal-pattern.jpg', listenUrl: '' },
+        { type: 'writing', title: 'Low Tide (lyric)', excerpt: 'The water pulls back slow / like it knows I have to go.', link: '' },
+      ],
+    },
+    {
+      id:      'sample-art',
+      sample:  true,
+      name:    'Selah Moss',
+      avatar:  'images/art-watercolor.jpg',
+      mediums: ['Art'],
+      bio:     'Watercolour and ink portraits, broken into planes and rebuilt.',
+      links:   [],
+      works: [
+        { type: 'art', title: 'Fractured', src: 'images/art-watercolor.jpg', caption: 'Watercolour and ink on paper.' },
+        { type: 'art', title: 'Classical Frequency', src: 'images/art-david.jpg', caption: 'Digital collage.' },
+      ],
+    },
+    {
+      id:      'sample-writing',
+      sample:  true,
+      name:    'Theo Vance',
+      avatar:  'images/art-figure.png',
+      mediums: ['Writing'],
+      bio:     'Short fiction and prose poems about islands, faith and leaving home.',
+      links:   [],
+      works: [
+        { type: 'writing', title: 'Salt Letters', excerpt: 'My mother wrote to the sea every Sunday. It never wrote back, but it kept the letters.', link: '' },
+        { type: 'writing', title: 'Harbour Hymn', excerpt: 'We sang to the boats as if they could hear us, and some of them came home.', link: '' },
+      ],
+    },
+  ],
 
   // ── Open Stage ────────────────────────────────────────────────────────────
   openStage: {
     intro: [
       'BEVO was never meant to stop with me. In 2021, artists from all over sent us their work, and that door opens again.',
-      'Anyone can submit songs and digital art they’ve created. Featured works are put on display and promoted on BEVO, and can eventually be added to a BEVO album. BEVO holders help decide who is featured next.',
+      'Anyone can submit music, video, digital art and writing they’ve created. Featured works are put on display and promoted on BEVO, and songs can eventually be added to a BEVO album. BEVO holders help decide who is featured next.',
     ],
     steps: [
-      { title: 'Submit your work',       text: 'Send a song or a piece of digital art you created.' },
+      { title: 'Submit your work',       text: 'Send a song, video, artwork or piece of writing you created.' },
       { title: 'Get featured',           text: 'Selected work is put on display and promoted on BEVO.' },
       { title: 'Holders vote',           text: '$BEVO holders help decide who is featured next.' },
-      { title: 'Become a BEVO Artist',   text: 'Featured artists join the roster, and songs can land on a BEVO album.' },
+      { title: 'Become a BEVO Artist',   text: 'Featured artists join the roster and the Featured Artists spotlight. Songs can land on a BEVO album.' },
     ],
     status: 'Submissions open in Phase 3 of the roadmap. Join the list and you’ll hear first.',
   },
