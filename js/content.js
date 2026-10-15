@@ -18,8 +18,8 @@ window.BEVO = {
       'Based in the Caribbean. Rooted in the spiritual. Reaching everywhere.',
     ],
     social: {
-      spotify:    'https://open.spotify.com/artist/',
-      apple:      'https://music.apple.com/artist/',
+      spotify:    'https://open.spotify.com/artist/4mF9PGVr6woqdnAS30mKvW',
+      apple:      'https://music.apple.com/us/artist/bevo-rey/6781925906',
       twitter:    'https://twitter.com/bevoart',
       telegram:   'https://t.me/bevotoken',
     },
@@ -134,18 +134,20 @@ window.BEVO = {
   ],
 
   music: {
+    artistName: 'Bevo Rey',
     spotify: {
-      playlistId: 'REPLACE_WITH_SPOTIFY_PLAYLIST_OR_ALBUM_ID',
-      label:      'On Spotify',
+      artistId: '4mF9PGVr6woqdnAS30mKvW',
+      url:      'https://open.spotify.com/artist/4mF9PGVr6woqdnAS30mKvW',
     },
     apple: {
-      albumId: 'REPLACE_WITH_APPLE_MUSIC_ALBUM_ID',
-      label:   'On Apple Music',
+      url: 'https://music.apple.com/us/artist/bevo-rey/6781925906',
     },
-    tracks: [
-      { title: 'Track title here', year: '2024' },
-      { title: 'Track title here', year: '2024' },
-    ],
+    latest: {
+      title:  '35',
+      type:   'Single',
+      year:   '2026',
+      tracks: ['Invisible', 'Guard Your Heart', 'Turquoise Dream'],
+    },
   },
 
   books: [
