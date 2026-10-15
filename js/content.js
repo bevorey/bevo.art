@@ -44,7 +44,7 @@ window.BEVO = {
     {
       id:      'bevo-rey',
       name:    'Bevo Rey',
-      avatar:  'images/bevo-logo-silver.png',
+      avatar:  'images/bevo-logo.png',
       mediums: ['Music', 'Art', 'Writing'],
       bio:     'Musician, poet and digital artist, and the founder of BEVO. Every image and song starts as words.',
       links: [
